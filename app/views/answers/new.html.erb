@@ -3,10 +3,7 @@
 <% form_for(@answer) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
+  <%= @question.content %>
   <p>
     <%= f.submit "Create" %>
   </p>

@@ -24,6 +24,7 @@ class AnswersController < ApplicationController
   # GET /answers/new
   # GET /answers/new.xml
   def new
+    @question = Question.find(params[:question_id])
     @answer = Answer.new
 
     respond_to do |format|
@@ -40,6 +41,7 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.xml
   def create
+    debugger
     @answer = Answer.new(params[:answer])
 
     respond_to do |format|
