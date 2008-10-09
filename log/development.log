@@ -1,0 +1,718 @@
+  [4;36;1mSQL (0.000226)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.025800)[0m   [0;1mCREATE DATABASE `qanda_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000105)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.019763)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.075739)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.048332)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.000710)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000459)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20081009054245)
+  [4;35;1mSQL (0.002586)[0m   [0mCREATE TABLE `questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000939)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20081009054245')[0m
+  [4;35;1mSQL (0.000438)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000224)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000328)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001588)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mSQL (0.002215)[0m   [0mdescribe `questions`[0m
+  [4;36;1mSQL (0.000397)[0m   [0;1mSHOW KEYS FROM `questions`[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000105)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000363)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000215)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001403)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (0.003385)[0m   [0;1mdescribe `questions`[0m
+  [4;35;1mSQL (0.000378)[0m   [0mSHOW KEYS FROM `questions`[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000106)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000361)[0m   [0;1mCREATE DATABASE `qanda_production` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;35;1mSQL (0.000122)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000114)[0m   [0mSET NAMES 'UTF8'[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000377)[0m   [0mCREATE DATABASE `qanda_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`[0m
+  [4;36;1mSQL (0.000257)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000105)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000355)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001194)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mSQL (0.002714)[0m   [0;1mdescribe `questions`[0m
+  [4;35;1mSQL (0.000349)[0m   [0mSHOW KEYS FROM `questions`[0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.016536)[0m   [0;1mDROP DATABASE IF EXISTS `qanda_test`[0m
+  [4;35;1mSQL (0.067581)[0m   [0mCREATE DATABASE `qanda_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000103)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000282)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002510)[0m   [0mCREATE TABLE `questions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000598)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002352)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.032298)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.000745)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000502)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.000835)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081009054245')[0m
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2008-10-09 14:49:20) [GET]
+  Session ID: 009b6c1ed4eb935e80be64347855327c
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+  [4;36;1mSQL (0.000278)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000119)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mQuestion Load (0.000348)[0m   [0;1mSELECT * FROM `questions` [0m
+Rendering questions/index
+Completed in 0.02672 (37 reqs/sec) | Rendering: 0.00387 (14%) | DB: 0.00075 (2%) | 200 OK [http://localhost/questions/]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2008-10-09 14:49:24) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--13e4fbf00dbb4d6aeac4ce762020354778654612
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+  [4;35;1mQuestion Columns (0.001349)[0m   [0mSHOW FIELDS FROM `questions`[0m
+Rendering questions/new
+Completed in 0.03663 (27 reqs/sec) | Rendering: 0.01261 (34%) | DB: 0.00135 (3%) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2008-10-09 14:49:32) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"create", "question"=>{"content"=>"<b>aaaa</b>"}, "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001347)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mSQL (0.000132)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Create (0.000449)[0m   [0;1mINSERT INTO `questions` (`created_at`, `updated_at`, `content`) VALUES('2008-10-09 05:49:32', '2008-10-09 05:49:32', '<b>aaaa</b>')[0m
+  [4;35;1mSQL (0.000686)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed in 0.03778 (26 reqs/sec) | DB: 0.00261 (6%) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2008-10-09 14:49:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--ccf8bdc369ce845a8d0607d36ac0d9720f0ce97c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001807)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000322)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/show
+Completed in 0.03534 (28 reqs/sec) | Rendering: 0.00660 (18%) | DB: 0.00213 (6%) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2008-10-09 14:49:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--f22cc3be19e6aaf7c250c281fc589a61dafa79d9
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.000284)[0m   [0;1mSELECT * FROM `questions` [0m
+Rendering questions/index
+  [4;35;1mQuestion Columns (0.001253)[0m   [0mSHOW FIELDS FROM `questions`[0m
+Completed in 0.03040 (32 reqs/sec) | Rendering: 0.00662 (21%) | DB: 0.00154 (5%) | 200 OK [http://localhost/questions]
+  [4;36;1mSQL (0.000226)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000101)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000368)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000221)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20081009054245)
+Migrating to CreateAnswers (20081009055116)
+  [4;36;1mSQL (0.046200)[0m   [0;1mCREATE TABLE `answers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `question_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000917)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081009055116')[0m
+  [4;36;1mSQL (0.000439)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000217)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000290)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001655)[0m   [0mSHOW FIELDS FROM `answers`[0m
+  [4;36;1mSQL (0.001151)[0m   [0;1mdescribe `answers`[0m
+  [4;35;1mSQL (0.000253)[0m   [0mSHOW KEYS FROM `answers`[0m
+  [4;36;1mSQL (0.001146)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mSQL (0.001452)[0m   [0mdescribe `questions`[0m
+  [4;36;1mSQL (0.000912)[0m   [0;1mSHOW KEYS FROM `questions`[0m
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mAnswer Load (0.000292)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02724 (36 reqs/sec) | Rendering: 0.00390 (14%) | DB: 0.00029 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2008-10-09 14:56:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+  [4;35;1mAnswer Columns (0.002885)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendering answers/new
+Completed in 0.04360 (22 reqs/sec) | Rendering: 0.01493 (34%) | DB: 0.00289 (6%) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:29) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"index", "controller"=>"answers", "answer"=>{"content"=>"fsdada\r\nfsdafsd\r\nfdsafas\r\n"}}
+  [4;36;1mAnswer Load (0.000274)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02494 (40 reqs/sec) | Rendering: 0.00129 (5%) | DB: 0.00027 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2008-10-09 14:56:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+  [4;35;1mAnswer Columns (0.001368)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendering answers/new
+Completed in 0.03288 (30 reqs/sec) | Rendering: 0.00809 (24%) | DB: 0.00137 (4%) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:36) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"index", "controller"=>"answers", "answer"=>{"content"=>"fdsasad\r\nfsdaf\r\n"}}
+  [4;36;1mAnswer Load (0.000279)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02443 (40 reqs/sec) | Rendering: 0.00118 (4%) | DB: 0.00028 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2008-10-09 14:56:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+  [4;35;1mAnswer Columns (0.001743)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendering answers/new
+Completed in 0.03354 (29 reqs/sec) | Rendering: 0.00819 (24%) | DB: 0.00174 (5%) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:50) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"index", "controller"=>"answers", "answer"=>{"content"=>"adsadsa"}}
+  [4;36;1mAnswer Load (0.000279)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02483 (40 reqs/sec) | Rendering: 0.00121 (4%) | DB: 0.00028 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;35;1mAnswer Load (0.000249)[0m   [0mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02441 (40 reqs/sec) | Rendering: 0.00118 (4%) | DB: 0.00025 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mAnswer Load (0.000300)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02505 (39 reqs/sec) | Rendering: 0.00125 (4%) | DB: 0.00030 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;35;1mAnswer Load (0.000282)[0m   [0mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02468 (40 reqs/sec) | Rendering: 0.00118 (4%) | DB: 0.00028 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:56:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mAnswer Load (0.000284)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02470 (40 reqs/sec) | Rendering: 0.00119 (4%) | DB: 0.00028 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2008-10-09 14:57:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+  [4;35;1mAnswer Columns (0.001830)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendering answers/new
+Completed in 0.03384 (29 reqs/sec) | Rendering: 0.00822 (24%) | DB: 0.00183 (5%) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:57:14) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"index", "controller"=>"answers", "answer"=>{"content"=>"aaaaaa\r\naaaaaa"}}
+  [4;36;1mAnswer Load (0.000277)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.03629 (27 reqs/sec) | Rendering: 0.00118 (3%) | DB: 0.00028 (0%) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2008-10-09 14:57:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.000292)[0m   [0mSELECT * FROM `questions` [0m
+Rendering questions/index
+  [4;36;1mQuestion Columns (0.001291)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Completed in 0.03322 (30 reqs/sec) | Rendering: 0.00667 (20%) | DB: 0.00158 (4%) | 200 OK [http://localhost/questions/]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2008-10-09 14:57:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+  [4;35;1mQuestion Columns (0.001365)[0m   [0mSHOW FIELDS FROM `questions`[0m
+Rendering questions/new
+Completed in 0.03523 (28 reqs/sec) | Rendering: 0.00834 (23%) | DB: 0.00136 (3%) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2008-10-09 14:57:37) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"create", "question"=>{"content"=>"aafsdaf"}, "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.039370)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mSQL (0.080769)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Create (0.000331)[0m   [0;1mINSERT INTO `questions` (`created_at`, `updated_at`, `content`) VALUES('2008-10-09 05:57:38', '2008-10-09 05:57:38', 'aafsdaf')[0m
+  [4;35;1mSQL (0.112742)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/questions/2
+Completed in 0.27729 (3 reqs/sec) | DB: 0.23321 (84%) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2008-10-09 14:57:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--ccf8bdc369ce845a8d0607d36ac0d9720f0ce97c
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001373)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000223)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering questions/show
+Completed in 0.03133 (31 reqs/sec) | Rendering: 0.00410 (13%) | DB: 0.00160 (5%) | 200 OK [http://localhost/questions/2]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 14:57:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--f22cc3be19e6aaf7c250c281fc589a61dafa79d9
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001385)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000220)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering questions/edit
+Completed in 0.03719 (26 reqs/sec) | Rendering: 0.01197 (32%) | DB: 0.00161 (4%) | 200 OK [http://localhost/questions/2/edit]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:58:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mAnswer Load (0.000271)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02456 (40 reqs/sec) | Rendering: 0.00118 (4%) | DB: 0.00027 (1%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2008-10-09 14:58:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+  [4;35;1mAnswer Columns (0.001371)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendering answers/new
+Completed in 0.03284 (30 reqs/sec) | Rendering: 0.00838 (25%) | DB: 0.00137 (4%) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:58:09) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"index", "controller"=>"answers", "answer"=>{"content"=>"fdsafdff"}}
+  [4;36;1mAnswer Load (0.000323)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.09065 (11 reqs/sec) | Rendering: 0.00125 (1%) | DB: 0.00032 (0%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:58:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mSQL (0.000266)[0m   [0;1mSET NAMES 'UTF8'[0m
+  [4;35;1mSQL (0.000118)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mAnswer Load (0.000366)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+Completed in 0.02792 (35 reqs/sec) | Rendering: 0.00388 (13%) | DB: 0.00075 (2%) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2008-10-09 14:58:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+  [4;35;1mAnswer Columns (0.001392)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Rendering answers/new
+Completed in 0.03860 (25 reqs/sec) | Rendering: 0.01362 (35%) | DB: 0.00139 (3%) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2008-10-09 14:58:57) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "action"=>"create", "controller"=>"answers", "answer"=>{"content"=>"aaaaa\r\n\r\n\r\n\r\naaaaa\r\n"}}
+  [4;36;1mAnswer Columns (0.001488)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mSQL (0.000127)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Create (0.000268)[0m   [0;1mINSERT INTO `answers` (`question_id`, `created_at`, `updated_at`, `content`) VALUES(NULL, '2008-10-09 05:58:57', '2008-10-09 05:58:57', 'aaaaa\r\n\r\n\r\n\r\naaaaa\r\n')[0m
+  [4;35;1mSQL (0.000660)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/answers/1
+Completed in 0.04005 (24 reqs/sec) | DB: 0.00254 (6%) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#show (for 127.0.0.1 at 2008-10-09 14:58:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVBbnN3ZXIgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B0Y=--23ac97f8f9f23a904faa261ec40be6ec38fa715d
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"answers"}
+  [4;36;1mAnswer Columns (0.001381)[0m   [0;1mSHOW FIELDS FROM `answers`[0m
+  [4;35;1mAnswer Load (0.000277)[0m   [0mSELECT * FROM `answers` WHERE (`answers`.`id` = 1) [0m
+Rendering answers/show
+Completed in 0.03219 (31 reqs/sec) | Rendering: 0.00566 (17%) | DB: 0.00166 (5%) | 200 OK [http://localhost/answers/1]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2008-10-09 14:59:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVBbnN3ZXIgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B1Q=--1a083fb6a8ea5665610ffcbd464e582e4c7c7667
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mAnswer Load (0.000274)[0m   [0;1mSELECT * FROM `answers` [0m
+Rendering answers/index
+  [4;35;1mAnswer Columns (0.001300)[0m   [0mSHOW FIELDS FROM `answers`[0m
+Completed in 0.03224 (31 reqs/sec) | Rendering: 0.00751 (23%) | DB: 0.00157 (4%) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2008-10-09 15:03:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.000299)[0m   [0;1mSELECT * FROM `questions` [0m
+Rendering questions/index
+  [4;35;1mQuestion Columns (0.001956)[0m   [0mSHOW FIELDS FROM `questions`[0m
+Completed in 0.04272 (23 reqs/sec) | Rendering: 0.01608 (37%) | DB: 0.00225 (5%) | 200 OK [http://localhost/questions/]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:03:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001361)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000231)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering questions/edit
+
+
+ActionView::TemplateError (undefined method `[]' for #<ActionView::Helpers::FormBuilder:0x265d02c>) on line #6 of questions/edit.html.erb:
+3: <% form_for(@question) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <%= render :partial => "form", :locals => f %>
+7:   <p>
+8:     <%= f.submit "Update" %>
+9:   </p>
+
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/partial_template.rb:42:in `add_object_to_local_assigns!'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/partial_template.rb:9:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/partials.rb:110:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/partials.rb:110:in `render_partial'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:277:in `render'
+    app/views/questions/edit.html.erb:6:in `_run_erb_47app47views47questions47edit46html46erb'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/helpers/form_helper.rb:317:in `fields_for'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/helpers/form_helper.rb:253:in `form_for'
+    app/views/questions/edit.html.erb:3:in `_run_erb_47app47views47questions47edit46html46erb'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:342:in `execute'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:35:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/template.rb:22:in `render_template'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_view/base.rb:248:in `render_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1112:in `render_for_file'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/layout.rb:259:in `render_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:51:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1161:in `default_render'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:503:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:05:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001397)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000228)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00118)
+Completed in 0.03931 (25 reqs/sec) | Rendering: 0.01389 (35%) | DB: 0.00162 (4%) | 200 OK [http://localhost/questions/2/edit]
+
+
+Processing QuestionsController#update (for 127.0.0.1 at 2008-10-09 15:05:17) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "_method"=>"put", "action"=>"update", "id"=>"2", "question"=>{"content"=>"aafsdaf\r\nfdsaf\r\nfsadf"}, "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001347)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000274)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Update (0.000329)[0m   [0mUPDATE `questions` SET `content` = 'aafsdaf\r\nfdsaf\r\nfsadf', `updated_at` = '2008-10-09 06:05:17' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.000728)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/2
+Completed in 0.04077 (24 reqs/sec) | DB: 0.00279 (6%) | 302 Found [http://localhost/questions/2]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2008-10-09 15:05:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0
+ZWQuBjoKQHVzZWR7BjsHRg==--9cf91ae1a6a6f1c287314bb745decec7c50e2649
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"questions"}
+  [4;35;1mQuestion Columns (0.001365)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.000218)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering questions/show
+Completed in 0.03233 (30 reqs/sec) | Rendering: 0.00520 (16%) | DB: 0.00158 (4%) | 200 OK [http://localhost/questions/2]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2008-10-09 15:05:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0
+ZWQuBjoKQHVzZWR7BjsHVA==--c22cc5cb437dbc227f45535348215b63f32a5487
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.000286)[0m   [0mSELECT * FROM `questions` [0m
+Rendering questions/index
+  [4;36;1mQuestion Columns (0.001280)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+Completed in 0.03370 (29 reqs/sec) | Rendering: 0.00785 (23%) | DB: 0.00157 (4%) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:05:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"questions"}
+  [4;35;1mQuestion Columns (0.001746)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.000289)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00117)
+Completed in 0.03598 (27 reqs/sec) | Rendering: 0.01026 (28%) | DB: 0.00204 (5%) | 200 OK [http://localhost/questions/2/edit]
+
+
+Processing QuestionsController#update (for 127.0.0.1 at 2008-10-09 15:05:26) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "_method"=>"put", "action"=>"update", "id"=>"2", "question"=>{"content"=>"aafsdaf\r\nfdsaf\r\nfsadf\r\nfsafsa\r\nfsadfasd"}, "controller"=>"questions"}
+  [4;35;1mQuestion Columns (0.001868)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.000318)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+  [4;35;1mSQL (0.000171)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Update (0.000277)[0m   [0;1mUPDATE `questions` SET `content` = 'aafsdaf\r\nfdsaf\r\nfsadf\r\nfsafsa\r\nfsadfasd', `updated_at` = '2008-10-09 06:05:26' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.031981)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/questions/2
+Completed in 0.07580 (13 reqs/sec) | DB: 0.03462 (45%) | 302 Found [http://localhost/questions/2]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2008-10-09 15:05:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0
+ZWQuBjoKQHVzZWR7BjsHRg==--9cf91ae1a6a6f1c287314bb745decec7c50e2649
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001809)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000311)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 2) [0m
+Rendering questions/show
+Completed in 0.03429 (29 reqs/sec) | Rendering: 0.00418 (12%) | DB: 0.00212 (6%) | 200 OK [http://localhost/questions/2]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2008-10-09 15:05:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0
+ZWQuBjoKQHVzZWR7BjsHVA==--c22cc5cb437dbc227f45535348215b63f32a5487
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.000293)[0m   [0;1mSELECT * FROM `questions` [0m
+Rendering questions/index
+  [4;35;1mQuestion Columns (0.001819)[0m   [0mSHOW FIELDS FROM `questions`[0m
+Completed in 0.04003 (24 reqs/sec) | Rendering: 0.01338 (33%) | DB: 0.00211 (5%) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:10:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001364)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000228)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00123)
+Completed in 0.03740 (26 reqs/sec) | Rendering: 0.01183 (31%) | DB: 0.00159 (4%) | 200 OK [http://localhost/questions/1/edit]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:11:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001426)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000228)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00127)
+Completed in 0.03742 (26 reqs/sec) | Rendering: 0.01149 (30%) | DB: 0.00165 (4%) | 200 OK [http://localhost/questions/1/edit]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:11:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001310)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000227)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00123)
+Completed in 0.03551 (28 reqs/sec) | Rendering: 0.01005 (28%) | DB: 0.00154 (4%) | 200 OK [http://localhost/questions/1/edit]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:11:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001375)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000231)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00135)
+Completed in 0.03711 (26 reqs/sec) | Rendering: 0.01049 (28%) | DB: 0.00161 (4%) | 200 OK [http://localhost/questions/1/edit]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:11:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001320)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000228)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00173)
+Completed in 0.03764 (26 reqs/sec) | Rendering: 0.01255 (33%) | DB: 0.00155 (4%) | 200 OK [http://localhost/questions/1/edit]
+
+
+Processing QuestionsController#update (for 127.0.0.1 at 2008-10-09 15:12:54) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--00b710a5d1947b0bbc8f4a0330f242936224ea9c
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5f2db60c684021240e3da16835c4784ef3d6e164", "_method"=>"put", "action"=>"update", "id"=>"1", "question"=>{"content"=>"<p><b>aaaa</b></p>\r\n<p><input type=\"text\" name=\"ssss\" value=\"ddd\" size=\"10\" maxlength=\"10\" /></p>\r\n<p><select name=\"eeee\" size=\"3\">\r\n<option value=\"1\">qqq</option>\r\n<option value=\"2\">www</option>\r\n<option value=\"3\" selected=\"selected\">eee</option>\r\n</select></p>"}, "controller"=>"questions"}
+  [4;36;1mQuestion Columns (0.001386)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mQuestion Load (0.000226)[0m   [0mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Update (0.000266)[0m   [0mUPDATE `questions` SET `content` = '<p><b>aaaa</b></p>\r\n<p><input type=\"text\" name=\"ssss\" value=\"ddd\" size=\"10\" maxlength=\"10\" /></p>\r\n<p><select name=\"eeee\" size=\"3\">\r\n<option value=\"1\">qqq</option>\r\n<option value=\"2\">www</option>\r\n<option value=\"3\" selected=\"selected\">eee</option>\r\n</select></p>', `updated_at` = '2008-10-09 06:12:54' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.000586)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed in 0.03715 (26 reqs/sec) | DB: 0.00259 (6%) | 302 Found [http://localhost/questions/1]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2008-10-09 15:12:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0
+ZWQuBjoKQHVzZWR7BjsHRg==--9cf91ae1a6a6f1c287314bb745decec7c50e2649
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"questions"}
+  [4;35;1mQuestion Columns (0.001429)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.000237)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/show
+Completed in 0.03151 (31 reqs/sec) | Rendering: 0.00362 (11%) | DB: 0.00167 (5%) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2008-10-09 15:14:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTcwNDA3MzQ0MWNjZmI2ZDhmMjNhZmE0MmNhZjg2
+MWMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidRdWVzdGlvbiB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0
+ZWQuBjoKQHVzZWR7BjsHVA==--c22cc5cb437dbc227f45535348215b63f32a5487
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"questions"}
+  [4;35;1mQuestion Columns (0.001366)[0m   [0mSHOW FIELDS FROM `questions`[0m
+  [4;36;1mQuestion Load (0.000229)[0m   [0;1mSELECT * FROM `questions` WHERE (`questions`.`id` = 1) [0m
+Rendering questions/edit
+Rendered questions/_form (0.00225)
+Completed in 0.03636 (27 reqs/sec) | Rendering: 0.01107 (30%) | DB: 0.00160 (4%) | 200 OK [http://localhost/questions/1/edit]

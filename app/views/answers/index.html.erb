@@ -1,0 +1,20 @@
+<h1>Listing answers</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+  </tr>
+
+<% for answer in @answers %>
+  <tr>
+    <td><%=h answer.content %></td>
+    <td><%= link_to 'Show', answer %></td>
+    <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
+    <td><%= link_to 'Destroy', answer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New answer', new_answer_path %>
