@@ -41,7 +41,6 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.xml
   def create
-    debugger
     @answer = Answer.new(params[:answer])
 
     respond_to do |format|
