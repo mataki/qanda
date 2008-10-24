@@ -85,7 +85,6 @@ describe QuestionsController do
         post :create, :question => {}
         response.should redirect_to(question_url(mock_question))
       end
-      
     end
     
     describe "with invalid params" do

@@ -2,6 +2,10 @@
   <%= form.label :content %><br />
   <%= form.text_area :content %>
 </p>
+<p>
+  <%= form.label :owner_regexs %><br />
+  <%= form.text_field :owner_regexs %>
+</p>
 <%= javascript_include_tag "fckeditor/fckeditor" %>
 <script type="text/javascript">
 FCKeditor.BasePath = "/javascripts/fckeditor/";
