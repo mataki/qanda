@@ -3,10 +3,12 @@
   <head>
     <title><%=h "qanda" %></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%= stylesheet_link_tag "application" %>
   </head>
   <body>
     <div id="head">
-      <p id="identity_url">identity_url: <%=h session[:identity_url] %></p>
+      <span id="app_title">qanda</span>
+      <span id="identity_url">identity_url: <%=h session[:identity_url] %></span>
     </div>
     <div id="main">
       <% %w(error notice info).each do |item| %>
