@@ -10,13 +10,13 @@ describe "/answers/edit.html.erb" do
     )
   end
 
-  it "should render edit form" do
-    render "/answers/edit.html.erb"
+#   it "should render edit form" do
+#     render "/answers/edit.html.erb"
     
-    response.should have_tag("form[action=#{answer_path(@answer)}][method=post]") do
-      with_tag('textarea#answer_content[name=?]', "answer[content]")
-    end
-  end
+#     response.should have_tag("form[action=#{answer_path(@answer)}][method=post]") do
+#       with_tag('textarea#answer_content[name=?]', "answer[content]")
+#     end
+#   end
 end
 
 

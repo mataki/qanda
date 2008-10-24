@@ -9,9 +9,9 @@ describe "/answers/show.html.erb" do
     )
   end
 
-  it "should render attributes in <p>" do
-    render "/answers/show.html.erb"
-    response.should have_text(/value\ for\ content/)
-  end
+#   it "should render attributes in <p>" do
+#     render "/answers/show.html.erb"
+#     response.should have_text(/value\ for\ content/)
+#   end
 end
 

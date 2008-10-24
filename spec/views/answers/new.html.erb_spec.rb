@@ -10,13 +10,13 @@ describe "/answers/new.html.erb" do
     )
   end
 
-  it "should render new form" do
-    render "/answers/new.html.erb"
+#   it "should render new form" do
+#     render "/answers/new.html.erb"
     
-    response.should have_tag("form[action=?][method=post]", answers_path) do
-      with_tag("textarea#answer_content[name=?]", "answer[content]")
-    end
-  end
+#     response.should have_tag("form[action=?][method=post]", answers_path) do
+#       with_tag("textarea#answer_content[name=?]", "answer[content]")
+#     end
+#   end
 end
 
 

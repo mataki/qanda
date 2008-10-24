@@ -14,9 +14,9 @@ describe "/answers/index.html.erb" do
     ]
   end
 
-  it "should render list of answers" do
-    render "/answers/index.html.erb"
-    response.should have_tag("tr>td", "value for content", 2)
-  end
+#   it "should render list of answers" do
+#     render "/answers/index.html.erb"
+#     response.should have_tag("tr>td", "value for content", 2)
+#   end
 end
 
