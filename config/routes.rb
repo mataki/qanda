@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => "questions"
+  map.resource :session
   map.resources :answers
 
   map.resources :questions
