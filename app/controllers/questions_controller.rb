@@ -78,6 +78,7 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
+      flash[:notice] = "Question was destroied."
       format.html { redirect_to(questions_url) }
       format.xml  { head :ok }
     end

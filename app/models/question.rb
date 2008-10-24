@@ -5,6 +5,8 @@ class Question < ActiveRecord::Base
   has_many :viewer_regexs, :through => :viewers, :source => :openid_regex
   has_many :viewers
 
+  validates_presence_of :content
+
   def owner_regexs=(regexs_str)
     owner_regexs.build conversion_regex_str_to_rebex_hash(regexs_str)
   end

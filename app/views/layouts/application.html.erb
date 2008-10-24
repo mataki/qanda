@@ -9,6 +9,13 @@
       <p id="identity_url">identity_url: <%=h session[:identity_url] %></p>
     </div>
     <div id="main">
+      <% %w(error notice info).each do |item| %>
+      <% if flash[item.to_sym] != nil %>
+      <div class="flash #{item}">
+	<h3><%=h flash[item.to_sym] %></h3>
+      </div>
+      <% end %>
+      <% end %>
       <%= yield %>
     </div>
   </body>
