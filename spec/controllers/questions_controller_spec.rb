@@ -71,11 +71,14 @@ describe QuestionsController do
   end
 
   describe "responding to POST create" do
+    before do
+      session[:identity_url] = "http://test.openid.com/id"
+    end
 
     describe "with valid params" do
       
       it "should expose a newly created question as @question" do
-        Question.should_receive(:new).with({'these' => 'params'}).and_return(mock_question(:save => true))
+        Question.should_receive(:new).with({'these' => 'params', "identity_url" => session[:identity_url]}).and_return(mock_question(:save => true))
         post :create, :question => {:these => 'params'}
         assigns(:question).should equal(mock_question)
       end
@@ -90,7 +93,7 @@ describe QuestionsController do
     describe "with invalid params" do
 
       it "should expose a newly created but unsaved question as @question" do
-        Question.stub!(:new).with({'these' => 'params'}).and_return(mock_question(:save => false))
+        Question.stub!(:new).with({'these' => 'params', "identity_url" => session[:identity_url]}).and_return(mock_question(:save => false))
         post :create, :question => {:these => 'params'}
         assigns(:question).should equal(mock_question)
       end

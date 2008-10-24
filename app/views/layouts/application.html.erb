@@ -12,7 +12,7 @@
       <% %w(error notice info).each do |item| %>
       <% if flash[item.to_sym] != nil %>
       <div class="flash #{item}">
-	<h3><%=h flash[item.to_sym] %></h3>
+        <h3><%=h flash[item.to_sym] %></h3>
       </div>
       <% end %>
       <% end %>

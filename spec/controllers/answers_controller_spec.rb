@@ -9,6 +9,9 @@ describe AnswersController do
     @mock_question ||= mock_model(Question, stubs)
   end
 
+  before do
+    session[:identity_url] = "http://test.openid.com/id"
+  end
   describe "responding to GET index" do
     it "should expose all answers as @answers" do
       Answer.should_receive(:find).with(:all).and_return([mock_answer])
@@ -62,9 +65,8 @@ describe AnswersController do
     describe "with valid params" do
       it "Answerにset_contentでcontentが設定されること" do
         mock_answer(:save => true)
-        mock_answer.should_receive(:question_id=).with("1")
         mock_answer.should_receive(:set_content)
-        Answer.should_receive(:new).and_return(mock_answer)
+        Answer.should_receive(:new).with({:question_id => "1", :identity_url => session[:identity_url]}).and_return(mock_answer)
 
         post :create, :question_id => 1, :hoge => "hoge"
 
@@ -72,8 +74,7 @@ describe AnswersController do
       end
 
       it "should redirect to the created answer" do
-        Answer.stub!(:new).and_return(mock_answer(:save => true))
-        mock_answer.should_receive(:question_id=).with("1")
+        Answer.stub!(:new).with({:question_id => "1", :identity_url => session[:identity_url]}).and_return(mock_answer(:save => true))
         mock_answer.should_receive(:set_content)
         post :create, :question_id => 1, :answer => {}
         response.should redirect_to(root_url)
@@ -82,16 +83,14 @@ describe AnswersController do
 
     describe "with invalid params" do
       it "should expose a newly created but unsaved answer as @answer" do
-        Answer.stub!(:new).and_return(mock_answer(:save => false))
-        mock_answer.should_receive(:question_id=).with("1")
+        Answer.stub!(:new).with({:question_id => "1", :identity_url => session[:identity_url]}).and_return(mock_answer(:save => false))
         mock_answer.should_receive(:set_content)
         post :create, :answer => {:these => 'params'}, :question_id => 1
         assigns(:answer).should equal(mock_answer)
       end
 
       it "should re-render the 'new' template" do
-        Answer.stub!(:new).and_return(mock_answer(:save => false))
-        mock_answer.should_receive(:question_id=).with("1")
+        Answer.stub!(:new).with({:question_id => "1", :identity_url => session[:identity_url]}).and_return(mock_answer(:save => false))
         mock_answer.should_receive(:set_content)
         post :create, :answer => {}, :question_id => 1
         response.should render_template('new')

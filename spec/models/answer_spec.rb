@@ -3,7 +3,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Answer do
   before(:each) do
     @valid_attributes = {
-      :content => "value for content"
+      :content => "value for content",
+      :identity_url => "value for identity_url"
     }
   end
 

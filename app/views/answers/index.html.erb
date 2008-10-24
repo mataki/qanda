@@ -2,14 +2,16 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Content</th>
+    <th>IdentityUrl</th>
   </tr>
 
 <% for answer in @answers %>
   <tr>
+    <td><%=h answer.id %></td>
     <td><%=h answer.content %></td>
+    <td><%=h answer.identity_url %></td>
   </tr>
 <% end %>
 </table>
-
-<br />

@@ -6,6 +6,7 @@ class Question < ActiveRecord::Base
   has_many :viewers
 
   validates_presence_of :content
+  validates_presence_of :identity_url
 
   def owner_regexs=(regexs_str)
     owner_regexs.build conversion_regex_str_to_rebex_hash(regexs_str)

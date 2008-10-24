@@ -36,8 +36,7 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.xml
   def create
-    @answer = Answer.new
-    @answer.question_id = params[:question_id]
+    @answer = Answer.new(:question_id => params[:question_id], :identity_url => session[:identity_url])
     @answer.set_content(params)
 
     respond_to do |format|
