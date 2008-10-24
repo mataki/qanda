@@ -41,12 +41,14 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.xml
   def create
-    @answer = Answer.new(params[:answer])
+    @answer = Answer.new
+    @answer.question_id = params[:question_id]
+    @answer.set_content(params)
 
     respond_to do |format|
       if @answer.save
         flash[:notice] = 'Answer was successfully created.'
-        format.html { redirect_to(@answer) }
+        format.html { redirect_to(root_url) }
         format.xml  { render :xml => @answer, :status => :created, :location => @answer }
       else
         format.html { render :action => "new" }
