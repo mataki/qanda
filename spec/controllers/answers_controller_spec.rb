@@ -14,8 +14,9 @@ describe AnswersController do
   end
   describe "responding to GET index" do
     it "should expose all answers as @answers" do
-      Answer.should_receive(:find).with(:all).and_return([mock_answer])
-      get :index
+      Question.should_receive(:find).with("37").and_return(mock_question)
+      mock_question.should_receive(:answers).and_return([mock_answer])
+      get :index, :question_id => 37
       assigns[:answers].should == [mock_answer]
     end
 
@@ -23,9 +24,10 @@ describe AnswersController do
 
       it "should render all answers as xml" do
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Answer.should_receive(:find).with(:all).and_return(answers = mock("Array of Answers"))
+        Question.should_receive(:find).with("37").and_return(mock_question)
+        mock_question.should_receive(:answers).and_return(answers = mock("Array of Answers"))
         answers.should_receive(:to_xml).and_return("generated XML")
-        get :index
+        get :index, :question_id => 37
         response.body.should == "generated XML"
       end
     end

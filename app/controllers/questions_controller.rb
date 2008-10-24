@@ -35,6 +35,10 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
+    unless @question.answers.empty?
+      flash[:error] = "Question was not edit because it has answers."
+      redirect_to(@question)
+    end
   end
 
   # POST /questions
@@ -60,6 +64,11 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
 
     respond_to do |format|
+      unless @question.answers.empty?
+        flash[:error] = "Question was not edit because it has answers."
+        format.html { redirect_to(@question) }
+      end
+
       if @question.update_attributes(params[:question])
         flash[:notice] = 'Question was successfully updated.'
         format.html { redirect_to(@question) }

@@ -2,7 +2,8 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.xml
   def index
-    @answers = Answer.find(:all)
+    @question = Question.find(params[:question_id])
+    @answers = @question.answers
 
     respond_to do |format|
       format.html # index.html.erb
