@@ -16,6 +16,21 @@ class Question < ActiveRecord::Base
     viewer_regexs.build conversion_regex_str_to_rebex_hash(regexs_str)
   end
 
+  def viewer?(identity_url)
+    viewer_regexs.any? do |regex|
+      Regexp.new(regex.regex).match(identity_url)
+    end
+  end
+
+  def owner?(identity_url)
+    owner_regexs.any? do |regex|
+      Regexp.new(regex.regex).match(identity_url)
+    end
+  end
+
+  def accsessible?(identity_url)
+    viewer? or owner?
+  end
 private
   def conversion_regex_str_to_rebex_hash(regexs_str)
     regexs = regexs_str ? regexs_str.split(',') : []
