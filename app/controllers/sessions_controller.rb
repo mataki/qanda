@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   protect_from_forgery :except => [:create]
-  
+  skip_before_filter :logged_in?
+
   def new
   end
 

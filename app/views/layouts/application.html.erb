@@ -3,22 +3,29 @@
   <head>
     <title><%=h "qanda" %></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%= stylesheet_link_tag "blueprint/screen" %>
+    <%= stylesheet_link_tag "blueprint/print" %>
+    <!--[if IE]>
+      <%= stylesheet_link_tag "blueprint/ie" %>
+    <![endif]-->
     <%= stylesheet_link_tag "application" %>
   </head>
   <body>
-    <div id="head">
-      <span id="app_title"><%= image_tag('qanda.png') %></span>
-      <span id="identity_url">identity_url: <%=h session[:identity_url] %></span>
-    </div>
-    <div id="main">
-      <% %w(error notice info).each do |item| %>
-      <% if flash[item.to_sym] != nil %>
-      <div class="flash #{item}">
-        <h3><%=h flash[item.to_sym] %></h3>
+    <div class="container">
+      <div id="head" class="span-24">
+        <div id="app_title"><%= link_to image_tag('qanda.png'), root_path %></div>
       </div>
-      <% end %>
-      <% end %>
-      <%= yield %>
+      <div id="identity_url" class="prepend-14 span-10 last">identity_url: <%=h truncate(session[:identity_url]) %></div>
+      <div id="main" class="span-24">
+        <% %w(error notice success).each do |item| %>
+        <% if flash[item.to_sym] != nil %>
+        <div class="<%= item %>">
+          <h3><%=h flash[item.to_sym] %></h3>
+        </div>
+        <% end %>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

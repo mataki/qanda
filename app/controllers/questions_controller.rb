@@ -2,10 +2,10 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = Question.find(:all) 
+    @questions = Question.find(:all)
 
     @answerable_questions, @answered_questions = divide_questions
-   
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @questions }
@@ -49,7 +49,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        flash[:notice] = 'Question was successfully created.'
+        flash[:success] = 'Question was successfully created.'
         format.html { redirect_to(@question) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
@@ -71,7 +71,7 @@ class QuestionsController < ApplicationController
       end
 
       if @question.update_attributes(params[:question])
-        flash[:notice] = 'Question was successfully updated.'
+        flash[:success] = 'Question was successfully updated.'
         format.html { redirect_to(@question) }
         format.xml  { head :ok }
       else
@@ -88,19 +88,19 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      flash[:notice] = "Question was destroied."
+      flash[:success] = "Question was destroied."
       format.html { redirect_to(questions_url) }
       format.xml  { head :ok }
     end
   end
-  
+
   private
-  
+
   def divide_questions
     identity_url = session[:identity_url]
     answerable_questions = Array.new
     answered_questions = Array.new
-    
+
     @questions.each do |question|
       if question.viewer_regexs.any?{|regex| regex.regex =~ /#{identity_url}/}
         if question.answers.any?{|answer| answer.identity_url =~ /#{identity_url}/}
@@ -108,8 +108,8 @@ class QuestionsController < ApplicationController
         else
           answerable_questions << question
         end
-      end  
+      end
     end
-    return answerable_questions, answered_questions  
+    return answerable_questions, answered_questions
   end
 end

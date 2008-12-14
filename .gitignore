@@ -2,6 +2,7 @@
 /db/production.sqlite3
 /db/schema.rb
 /db/test.sqlite3
-/log/development.log
-/log/test.log
+/log/development.log*
+/log/test.log*
 /config/database.yml
+/tmp/.tasks-cache

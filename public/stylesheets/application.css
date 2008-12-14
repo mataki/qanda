@@ -1,2 +1,1 @@
-#app_title { font-weight: bold; font-size: x-large }
-#identity_url { float: right; }
+div#identity_url {border-bottom:1px dashed silver;border-top: 1px dashed silver;}
