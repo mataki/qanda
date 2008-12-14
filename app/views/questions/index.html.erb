@@ -1,19 +1,19 @@
 <h1>Listing questions</h1>
 <table>
-  <h3>answerable questions</h3>
+  <h3>New questions</h3>
   <tr>
     <th>title</th>
     <th>IdentityUrl</th>
-  </tr> 
-  <%= render :partial => 'question', :collection => @answerable_questions %>
+  </tr>
+  <%= render :partial => 'question', :collection => @questions_hash[:new] %>
 </table>
 <table>
-  <h3>answered questions</h3>
+  <h3>Answered questions</h3>
   <tr>
     <th>title</th>
     <th>IdentityUrl</th>
-  </tr> 
-  <%= render :partial => 'question', :collection => @answered_questions %>
+  </tr>
+  <%= render :partial => 'question', :collection => @questions_hash[:answered] %>
 </table>
 
 <br />

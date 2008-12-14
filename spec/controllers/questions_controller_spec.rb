@@ -1,6 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe QuestionsController do
+  before do
+    @identity_url = "http://localhost:3100/user/mat"
+    session[:identity_url] = @identity_url
+  end
 
   def mock_question(stubs={})
     @mock_question ||= mock_model(Question, stubs)
@@ -9,16 +13,16 @@ describe QuestionsController do
   describe "responding to GET index" do
 
     it "should expose all questions as @questions" do
-      Question.should_receive(:find).with(:all).and_return([mock_question])
+      Question.should_receive(:find_by_user).with(@identity_url).and_return(questions_hash = mock('questions_hash'))
       get :index
-      assigns[:questions].should == [mock_question]
+      assigns[:questions_hash].should == questions_hash
     end
 
     describe "with mime type of xml" do
       it "should render all questions as xml" do
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Question.should_receive(:find).with(:all).and_return(questions = mock("Array of Questions"))
-        questions.should_receive(:to_xml).and_return("generated XML")
+        Question.should_receive(:find_by_user).with(@identity_url).and_return(questions = mock('questions_hash'))
+        questions.should_receive(:to_a).and_return("generated XML")
         get :index
         response.body.should == "generated XML"
       end
@@ -52,7 +56,7 @@ describe QuestionsController do
   end
 
   describe "responding to GET edit" do
-    describe "解答が一つもない場合" do 
+    describe "解答が一つもない場合" do
       it "should expose the requested question as @question" do
         Question.should_receive(:find).with("37").and_return(mock_question)
         mock_question.stub!(:answers).and_return([])

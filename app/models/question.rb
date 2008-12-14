@@ -31,6 +31,14 @@ class Question < ActiveRecord::Base
   def accsessible?(identity_url)
     viewer? or owner?
   end
+
+  def self.find_by_user(identity_url)
+    new_questions = all(:conditions => ["created_at > ?", Time.now - 7.day])
+    answered_questions = all(:conditions => { "answers.identity_url" => identity_url}, :include => :answers)
+
+    return { :new => new_questions, :answered => answered_questions }
+  end
+
 private
   def conversion_regex_str_to_rebex_hash(regexs_str)
     regexs = regexs_str ? regexs_str.split(',') : []

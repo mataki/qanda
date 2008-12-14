@@ -46,3 +46,21 @@ describe Question, "#viewer?" do
     end
   end
 end
+
+describe Question, ".find_by_user" do
+  before do
+    @user_identity_url = "http://example.com/user/access"
+    @questions = (1..5).map{ |i| Question.create!(:content => "content#{i}", :title => "title#{i}", :identity_url => "http://example.com/user/a_user#{i}") }
+    @old_question = Question.create!(:content => "content", :title => "title", :identity_url => "http://example.com/user/a_user", :created_at => Time.now - 10.day)
+    @ansered_question = @questions.last
+    Answer.create!(:identity_url => @user_identity_url, :content => "answer", :question => @ansered_question)
+
+    @result = Question.find_by_user(@user_identity_url)
+  end
+  it "newに新しい質問が含まれていること" do
+    @result[:new].should == @questions
+  end
+  it "答えた質問に答えた質問が入っていること" do
+    @result[:answered].should be_include(@ansered_question)
+  end
+end
