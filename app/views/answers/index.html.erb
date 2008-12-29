@@ -10,7 +10,7 @@
 <% for answer in @answers %>
   <tr>
     <td><%=h answer.id %></td>
-    <td><%=h answer.content %></td>
+    <td><%=h answer.content.to_json %></td>
     <td><%=h answer.identity_url %></td>
   </tr>
 <% end %>
