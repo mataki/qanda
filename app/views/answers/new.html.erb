@@ -4,7 +4,7 @@
   <%= f.error_messages %>
 
   <p>
-    <%= @question.content %>
+    <%=render_question_content @question.content %>
   </p>
   <p>
     <%= f.submit "Create" %>

@@ -2,8 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe QuestionsController do
   before do
-    @identity_url = "http://localhost:3100/user/mat"
-    session[:identity_url] = @identity_url
+    user_login
   end
 
   def mock_question(stubs={})
@@ -13,7 +12,7 @@ describe QuestionsController do
   describe "responding to GET index" do
 
     it "should expose all questions as @questions" do
-      Question.should_receive(:find_by_user).with(@identity_url).and_return(questions_hash = mock('questions_hash'))
+      Question.should_receive(:find_by_user).with(session[:identity_url]).and_return(questions_hash = mock('questions_hash'))
       get :index
       assigns[:questions_hash].should == questions_hash
     end
@@ -21,7 +20,7 @@ describe QuestionsController do
     describe "with mime type of xml" do
       it "should render all questions as xml" do
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Question.should_receive(:find_by_user).with(@identity_url).and_return(questions = mock('questions_hash'))
+        Question.should_receive(:find_by_user).with(session[:identity_url]).and_return(questions = mock('questions_hash'))
         questions.should_receive(:to_a).and_return("generated XML")
         get :index
         response.body.should == "generated XML"

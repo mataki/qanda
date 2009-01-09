@@ -6,14 +6,32 @@ class Question < ActiveRecord::Base
   has_many :viewers
 
   validates_presence_of :content
+  validates_presence_of :title
   validates_presence_of :identity_url
 
-  def owner_regexs=(regexs_str)
-    owner_regexs.build conversion_regex_str_to_rebex_hash(regexs_str)
+  attr_accessor :owner_regexs_str, :viewer_regexs_str
+
+  def before_validation
+    owner_regexs.clear
+    unless owner_regexs_str.blank?
+      owner_regexs.build conversion_regex_str_to_rebex_hash(owner_regexs_str)
+    else
+      owner_regexs.build conversion_regex_str_to_rebex_hash("*")
+    end
+    viewer_regexs.clear
+    unless viewer_regexs_str.blank?
+      viewer_regexs.build conversion_regex_str_to_rebex_hash(viewer_regexs_str)
+    else
+      viewer_regexs.build conversion_regex_str_to_rebex_hash("*")
+    end
   end
 
-  def viewer_regexs=(regexs_str)
-    viewer_regexs.build conversion_regex_str_to_rebex_hash(regexs_str)
+  def owner_regexs_str
+    @owner_regexs_str ||= owner_regexs.map{|regex| regex.regex }.join(',')
+  end
+
+  def viewer_regexs_str
+    @viewer_regexs_str ||= viewer_regexs.map{|regex| regex.regex }.join(',')
   end
 
   def viewer?(identity_url)
@@ -41,7 +59,7 @@ class Question < ActiveRecord::Base
 
 private
   def conversion_regex_str_to_rebex_hash(regexs_str)
-    regexs = regexs_str ? regexs_str.split(',') : []
+    regexs = regexs_str ? regexs_str.split(',').map(&:strip).uniq : []
 
     attrs = regexs.map do |regex|
       { :regex => regex }

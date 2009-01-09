@@ -4,6 +4,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'spec'
 require 'spec/rails'
+require "ruby-debug"
 
 Spec::Runner.configure do |config|
   # If you're not using ActiveRecord you should remove these
@@ -42,6 +43,9 @@ Spec::Runner.configure do |config|
   # config.mock_with :rr
   #
   # == Notes
-  # 
+  #
   # For more information take a look at Spec::Example::Configuration and Spec::Runner
+  def user_login
+    session[:identity_url] = "http://test.openid.host/a_user"
+  end
 end

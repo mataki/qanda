@@ -1,8 +1,7 @@
 class AnswersController < ApplicationController
-  # GET /answers
-  # GET /answers.xml
+  before_filter :find_question
+
   def index
-    @question = Question.find(params[:question_id])
     @answers = @question.answers
 
     respond_to do |format|
@@ -14,7 +13,7 @@ class AnswersController < ApplicationController
   # GET /answers/1
   # GET /answers/1.xml
   def show
-    @answer = Answer.find(params[:id])
+    @answer = @question.answers.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,8 +24,7 @@ class AnswersController < ApplicationController
   # GET /answers/new
   # GET /answers/new.xml
   def new
-    @question = Question.find(params[:question_id])
-    @answer = Answer.new
+    @answer = @question.answers.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,18 +35,25 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.xml
   def create
-    @answer = Answer.new(:question_id => params[:question_id], :identity_url => session[:identity_url])
+    @answer = @question.answers.build(:identity_url => session[:identity_url])
     @answer.set_content(params)
 
     respond_to do |format|
       if @answer.save
         flash[:success] = 'Answer was successfully created.'
         format.html { redirect_to(root_url) }
+        flash[:notice] = 'Answer was successfully created.'
+        format.html { redirect_to([@question, @answer]) }
         format.xml  { render :xml => @answer, :status => :created, :location => @answer }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @answer.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+private
+  def find_question
+    @question = Question.find(params[:question_id])
   end
 end

@@ -4,15 +4,23 @@
 class ApplicationController < ActionController::Base
   helper :all
   layout 'application'
-  before_filter :logged_in?
 
   protect_from_forgery
+  before_filter :login_required
+  filter_parameter_logging :password
+
+  def login_required
+    unless logged_in?
+      redirect_to login_url
+      return false
+    end
+  end
 
   def logged_in?
-    if session[:identity_url].blank?
-      redirect_to new_session_url
-    else
-      true
-    end
+    !!session[:identity_url]
+  end
+
+  def authorized?
+    logged_in?
   end
 end

@@ -3,6 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Question do
   before(:each) do
     @valid_attributes = {
+      :title => "value for title",
       :content => "value for content",
       :identity_url => "value for identity_url"
     }
@@ -13,14 +14,29 @@ describe Question do
   end
 end
 
-describe Question, "#owner_regexs=" do
+describe Question, "#before_validation" do
   before do
-    @regexs = "http://hoge.*,https://*"
-    @question = Question.new
-    @question.owner_regexs = @regexs
+    @question = Question.new(:identity_url => "http://user.example.com/", :title => "title", :content => "content")
   end
-  it "questionにowner_regexsが設定されていること" do
-    @question.owner_regexs.length.should == 2
+  describe "データが無い場合 strが渡されていない場合" do
+    it "*が追加されていること" do
+      @question.save!
+      @question.owner_regexs_str = nil
+      @question.owner_regexs_str.should == "*"
+    end
+  end
+  describe "データが存在している場合 strが渡されていない場合" do
+    before do
+      @question.owner_regexs_str = "http://hoge.openid.host/,http://fuga.openid.host/"
+      @question.save!
+
+      @question.owner_regexs_str = nil
+      @question.save!
+    end
+    it "*のみが設定されていること" do
+      @question.owner_regexs_str = nil
+      @question.owner_regexs_str.should == "*"
+    end
   end
 end
 

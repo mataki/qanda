@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
-  protect_from_forgery :except => [:create]
-  skip_before_filter :logged_in?
+  protect_from_forgery :except => [:create, :destroy]
+
+  skip_before_filter :login_required, :only => [:new, :create]
 
   def new
   end
@@ -13,6 +14,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:identity_url] = nil
+    redirect_to(login_url)
+  end
   protected
   def open_id_authentication
     authenticate_with_open_id do |result, identity_url|
