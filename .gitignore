@@ -6,3 +6,4 @@
 /log/test.log*
 /config/database.yml
 /tmp/.tasks-cache
+/coveraeg/*
