@@ -1,5 +1,5 @@
 if config.respond_to?(:gems)
-  config.gem 'ruby-openid', :lib => 'openid', :version => '>=2.0.4'
+  config.gem 'ruby-openid', :lib => 'openid', :version => '>=2.1.2'
 else
   begin
     require 'openid'
