@@ -17,7 +17,7 @@ describe Answer, "#set_content" do
   before do
     @answer = Answer.new
   end
-  describe "paramsに消すべき要素が入っている場合" do 
+  describe "paramsに消すべき要素が入っている場合" do
     before do
       @params = { "commit" => "Commit" }
     end
@@ -34,5 +34,17 @@ describe Answer, "#set_content" do
       @answer.set_content(@params)
       @answer.content.should be_include(@params.keys.first)
     end
+  end
+end
+
+describe Answer, "#grid_data" do
+  before do
+    @answer = Answer.new(:content => { "hoge" => "foo", "fuga" => "bar" })
+  end
+  it "content内のkeyから値を取り出すこと" do
+    @answer.grid_data("hoge").should == "foo"
+  end
+  it "値が見つからない場合 空文字が返ること" do
+    @answer.grid_data("foo").should == ""
   end
 end

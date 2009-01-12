@@ -80,3 +80,17 @@ describe Question, ".find_by_user" do
     @result[:answered].should be_include(@ansered_question)
   end
 end
+
+describe Question, "#grid_header" do
+  describe "答えが一つ登録されている場合" do
+    before do
+      @params = { "hoge" => "foo", "fuga" => "bar" }
+      @answer = mock_model(Answer, :content => @params)
+      @question = Question.new
+      @question.stub!(:answers).and_return([@answer])
+    end
+    it "要素のkeyが返されること" do
+      @question.grid_header.should == ["hoge", "fuga"].sort
+    end
+  end
+end

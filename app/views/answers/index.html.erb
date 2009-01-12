@@ -3,15 +3,24 @@
 <table>
   <tr>
     <th>Id</th>
-    <th>Content</th>
+    <% @question.grid_header.each do |item| %>
+    <th><%= item %></th>
+    <% end %>
     <th>IdentityUrl</th>
   </tr>
 
 <% for answer in @answers %>
   <tr>
     <td><%=h answer.id %></td>
-    <td><%=h answer.content.to_json %></td>
+    <% @question.grid_header.each do |item| %>
+    <td><%=h answer.grid_data(item) %></td>
+    <% end %>
     <td><%=h answer.identity_url %></td>
   </tr>
 <% end %>
 </table>
+<% content_for :javascript_include do %>
+<%= javascript_include_tag "flexigrid" %>
+<% end %>
+<% content_for :javascript do %>
+<% end %>

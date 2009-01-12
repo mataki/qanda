@@ -12,4 +12,8 @@ class Answer < ActiveRecord::Base
     end
     self.content = orign_params
   end
+
+  def grid_data(key)
+    content[key] || ""
+  end
 end

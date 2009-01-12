@@ -57,6 +57,9 @@ class Question < ActiveRecord::Base
     return { :new => new_questions, :answered => answered_questions }
   end
 
+  def grid_header
+    answers.first.content.keys.sort
+  end
 private
   def conversion_regex_str_to_rebex_hash(regexs_str)
     regexs = regexs_str ? regexs_str.split(',').map(&:strip).uniq : []

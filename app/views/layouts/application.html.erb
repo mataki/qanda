@@ -9,6 +9,7 @@
       <%= stylesheet_link_tag "blueprint/ie" %>
     <![endif]-->
     <%= stylesheet_link_tag "application" %>
+    <%= yield :stylesheet %>
   </head>
   <body>
     <div class="container">
@@ -36,5 +37,10 @@
         <%= yield %>
       </div>
     </div>
+    <%= javascript_include_tag :defaults %>
+    <%= yield :javascript_include %>
+    <script type="text/javascript">
+      <%= yield :javascript %>
+    </script>
   </body>
 </html>
