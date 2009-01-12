@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   before_filter :login_required
   filter_parameter_logging :password
 
+  helper_method :logged_in?
+
   def login_required
     unless logged_in?
       redirect_to login_url

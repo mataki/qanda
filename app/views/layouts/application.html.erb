@@ -13,9 +13,18 @@
   <body>
     <div class="container">
       <div id="head" class="span-24">
-        <div id="app_title"><%= link_to image_tag('qanda.png'), root_path %></div>
+        <div id="app_title" class="span-10"><%= link_to image_tag('qanda.png'), root_path %></div>
+        <div id="status" class="span-10 last">
+          <% if logged_in? %>
+          <div id="identity_url"><%= 'identity_url:' + truncate(session[:identity_url],40) %></div>
+          <div id="logout"><%= link_to 'logout', logout_path %></div>
+          <% else %>
+          <div id="login"><%= link_to 'login', login_path %></div>
+          <% end %>
+
+        </div>
       </div>
-      <div id="identity_url" class="prepend-14 span-10 last">identity_url: <%=h truncate(session[:identity_url]) %></div>
+
       <div id="main" class="span-24">
         <% %w(error notice success).each do |item| %>
         <% if flash[item.to_sym] != nil %>
