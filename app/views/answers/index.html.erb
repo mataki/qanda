@@ -1,26 +1,49 @@
 <h1>Listing answers</h1>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <% @question.grid_header.each do |item| %>
-    <th><%= item %></th>
-    <% end %>
-    <th>IdentityUrl</th>
-  </tr>
+<table id="answers_table" class="tablesorter">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <% @question.grid_header.each do |item| %>
+      <th><%= item %></th>
+      <% end %>
+      <th>IdentityUrl</th>
+    </tr>
+  </thead>
 
-<% for answer in @answers %>
-  <tr>
-    <td><%=h answer.id %></td>
-    <% @question.grid_header.each do |item| %>
-    <td><%=h answer.grid_data(item) %></td>
+  <tbody>
+    <% for answer in @answers %>
+    <tr>
+      <td><%=h answer.id %></td>
+      <% @question.grid_header.each do |item| %>
+      <td><%=h answer.grid_data(item) %></td>
+      <% end %>
+      <td><%=h answer.identity_url %></td>
+    </tr>
     <% end %>
-    <td><%=h answer.identity_url %></td>
-  </tr>
-<% end %>
+  </tbody>
 </table>
+<div id="answers_pager">
+  <form>
+    <%= image_tag "tablesorterpager/first.png", :class => "first icon" %>
+    <%= image_tag "tablesorterpager/prev.png", :class => "prev icon" %>
+    <%= text_field_tag nil, nil, :class => "pagedisplay" %>
+    <%= image_tag "tablesorterpager/next.png", :class => "next icon" %>
+    <%= image_tag "tablesorterpager/last.png", :class => "last icon" %>
+    <%= select_tag nil, options_for_select([10,20,30,40]), :class => "pagesize" %>
+  </form>
+</div>
 <% content_for :javascript_include do %>
-<%= javascript_include_tag "flexigrid" %>
+<%= javascript_include_tag "jquery.tablesorter" %>
+<%= javascript_include_tag "jquery.tablesorter.pager" %>
 <% end %>
 <% content_for :javascript do %>
+$(function(){
+    $("#answers_table")
+    .tablesorter({
+        widgets: ['zebra'],
+        widthFixed: true
+    })
+.tablesorterPager({container: $("#answers_pager")});
+});
 <% end %>
