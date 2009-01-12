@@ -1,9 +1,11 @@
-<% form_tag(session_url) do %>
-<p>
-  <label for="openid_identifier">OpenID:</label>
-  <%= text_field_tag "openid_identifier" %>
-</p>
-<p>
-  <%= submit_tag "Sign in", :disable_with => "Signig in&hellip;" %>
-</p>
-<% end %>
+<div id="login_form" class="span-8 box">
+  <% form_tag(session_url) do %>
+  <p>
+    <label for="openid_identifier">OpenID:</label>
+    <%= text_field_tag "openid_identifier" %>
+  </p>
+  <p>
+    <%= submit_tag "Sign in", :disable_with => "Signig in&hellip;" %>
+  </p>
+  <% end %>
+</div>

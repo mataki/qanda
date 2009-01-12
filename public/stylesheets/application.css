@@ -2,4 +2,6 @@
 div#head { border-bottom:1px dashed silver; }
 div#status { border-left:1px solid black; height: 43px; padding:1.0em; margin:0.5em;}
 img.icon { margin: 0; float: none; }
+div#login_form { background:#E5ECF9; }
+input#openid_identifier { background: #FFF url("../images/openid_login_bg.gif") no-repeat scroll 0pt 50%; padding-left: 18px; width: 200px; }
 
