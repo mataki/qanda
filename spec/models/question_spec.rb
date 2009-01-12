@@ -93,4 +93,18 @@ describe Question, "#grid_header" do
       @question.grid_header.should == ["hoge", "fuga"].sort
     end
   end
+  describe "複数の答えが登録されていて、それぞれに登録されている要素が違う場合" do
+    before do
+      @params1 = { "hoge" => "foo", "fuga" => "bar" }
+      @answer1 = mock_model(Answer, :content => @params1)
+      @params2 = { "foo" => "foo", "fuga" => "bar" }
+      @answer2 = mock_model(Answer, :content => @params2)
+      @question = Question.new
+      @question.stub!(:answers).and_return([@answer1, @answer2])
+    end
+    it "すべての要素のkeyが返されること" do
+      valid_keys = (@params1.keys + @params2.keys).flatten.uniq.sort
+      @question.grid_header.should == valid_keys
+    end
+  end
 end

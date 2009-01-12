@@ -58,7 +58,7 @@ class Question < ActiveRecord::Base
   end
 
   def grid_header
-    answers.first.content.keys.sort
+    answers.map{|answer| answer.content.keys }.flatten.uniq.sort
   end
 private
   def conversion_regex_str_to_rebex_hash(regexs_str)
