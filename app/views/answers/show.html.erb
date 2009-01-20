@@ -1,10 +1,10 @@
 <p>
-  <b>Content:</b>
+  <b><%= _('Content:') %></b>
   <%=h @answer.content %>
 </p>
 <p>
-  <b>IdentityUrl:</b>
+  <b><%= _('IdentityUrl:') %></b>
   <%=h @answer.identity_url %>
 </p>
 
-<%= link_to 'Back', url_for(@question) %>
+<%= link_to _('Back'), url_for(@question) %>

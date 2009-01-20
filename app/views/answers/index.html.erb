@@ -1,13 +1,13 @@
-<h1>Listing answers</h1>
+<h1><%= _('Listing answers') %></h1>
 
 <table id="answers_table" class="tablesorter">
   <thead>
     <tr>
-      <th>Id</th>
+      <th><%= _('Id') %></th>
       <% @question.grid_header.each do |item| %>
       <th><%= item %></th>
       <% end %>
-      <th>IdentityUrl</th>
+      <th><%= _('IdentityUrl') %></th>
     </tr>
   </thead>
 

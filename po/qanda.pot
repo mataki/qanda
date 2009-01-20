@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: qanda 0.1.0\n"
+"POT-Creation-Date: 2009-01-20 21:11+0900\n"
+"PO-Revision-Date: 2009-01-20 20:38+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/answers_controller.rb:43
+msgid "Answer was successfully created."
+msgstr ""
+
+#: app/controllers/application.rb:18
+msgid "please login."
+msgstr ""
+
+#: app/controllers/questions_controller.rb:38
+#: app/controllers/questions_controller.rb:67
+msgid "Question was not edit because it has answers."
+msgstr ""
+
+#: app/controllers/questions_controller.rb:50
+msgid "Question was successfully created."
+msgstr ""
+
+#: app/controllers/questions_controller.rb:72
+msgid "Question was successfully updated."
+msgstr ""
+
+#: app/controllers/questions_controller.rb:89
+msgid "Question was destroied."
+msgstr ""
+
+#: app/models/answer.rb:-
+msgid "answer"
+msgstr ""
+
+#: app/models/answer.rb:-
+msgid "Answer|Content"
+msgstr ""
+
+#: app/models/answer.rb:-
+msgid "Answer|Question"
+msgstr ""
+
+#: app/models/answer.rb:-
+msgid "Answer|Created at"
+msgstr ""
+
+#: app/models/answer.rb:-
+msgid "Answer|Updated at"
+msgstr ""
+
+#: app/models/answer.rb:-
+msgid "Answer|Identity url"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "openid regex"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Regex"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Created at"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Updated at"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "owner"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Question"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Openid regex"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Created at"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Updated at"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "question"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "Question|Content"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "Question|Created at"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "Question|Updated at"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "Question|Identity url"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "Question|Title"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "viewer"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Question"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Openid regex"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Created at"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Updated at"
+msgstr ""
+
+#: app/views/answers/index.html.erb:1
+msgid "Listing answers"
+msgstr ""
+
+#: app/views/answers/index.html.erb:6
+msgid "Id"
+msgstr ""
+
+#: app/views/answers/index.html.erb:10 app/views/questions/index.html.erb:6
+#: app/views/questions/index.html.erb:14
+msgid "IdentityUrl"
+msgstr ""
+
+#: app/views/answers/new.html.erb:1
+msgid "New answer"
+msgstr ""
+
+#: app/views/answers/show.html.erb:2 app/views/questions/show.html.erb:2
+msgid "Content:"
+msgstr ""
+
+#: app/views/answers/show.html.erb:6 app/views/questions/show.html.erb:8
+msgid "IdentityUrl:"
+msgstr ""
+
+#: app/views/answers/show.html.erb:10 app/views/questions/edit.html.erb:13
+#: app/views/questions/new.html.erb:12 app/views/questions/show.html.erb:31
+msgid "Back"
+msgstr ""
+
+#: app/views/questions/_question.html.erb:4
+#: app/views/questions/edit.html.erb:12
+msgid "Show"
+msgstr ""
+
+#: app/views/questions/_question.html.erb:5
+#: app/views/questions/show.html.erb:30
+msgid "Edit"
+msgstr ""
+
+#: app/views/questions/_question.html.erb:6
+msgid "Anser"
+msgstr ""
+
+#: app/views/questions/_question.html.erb:7
+msgid "Anser list"
+msgstr ""
+
+#: app/views/questions/_question.html.erb:8
+msgid "Destroy"
+msgstr ""
+
+#: app/views/questions/_question.html.erb:8
+msgid "Are you sure?"
+msgstr ""
+
+#: app/views/questions/edit.html.erb:1
+msgid "Editing question"
+msgstr ""
+
+#: app/views/questions/edit.html.erb:8
+msgid "Update"
+msgstr ""
+
+#: app/views/questions/index.html.erb:1
+msgid "Publicated questions"
+msgstr ""
+
+#: app/views/questions/index.html.erb:3
+msgid "New questions"
+msgstr ""
+
+#: app/views/questions/index.html.erb:5 app/views/questions/index.html.erb:13
+msgid "title"
+msgstr ""
+
+#: app/views/questions/index.html.erb:11
+msgid "Answered questions"
+msgstr ""
+
+#: app/views/questions/index.html.erb:21 app/views/questions/new.html.erb:1
+msgid "New question"
+msgstr ""
+
+#: app/views/questions/new.html.erb:8
+msgid "Create"
+msgstr ""
+
+#: app/views/questions/show.html.erb:14
+msgid "OwnerRegex:"
+msgstr ""
+
+#: app/views/questions/show.html.erb:22
+msgid "ViewerRegex:"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:4
+msgid "OpenID:"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:8
+msgid "Sign in"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:8
+msgid "Signig in&hellip;"
+msgstr ""

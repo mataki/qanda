@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: qanda 0.1.0\n"
+"POT-Creation-Date: 2009-01-20 21:11+0900\n"
+"PO-Revision-Date: 2009-01-20 21:13+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/answers_controller.rb:43
+msgid "Answer was successfully created."
+msgstr "回答が登録されました"
+
+#: app/controllers/application.rb:18
+msgid "please login."
+msgstr "ログインしてください"
+
+#: app/controllers/questions_controller.rb:38
+#: app/controllers/questions_controller.rb:67
+msgid "Question was not edit because it has answers."
+msgstr "質問は、既に回答が存在するため編集できません"
+
+#: app/controllers/questions_controller.rb:50
+msgid "Question was successfully created."
+msgstr "質問が登録されました"
+
+#: app/controllers/questions_controller.rb:72
+msgid "Question was successfully updated."
+msgstr "質問が更新されました"
+
+#: app/controllers/questions_controller.rb:89
+msgid "Question was destroied."
+msgstr "質問が削除されました"
+
+#: app/models/answer.rb:-
+msgid "answer"
+msgstr "回答"
+
+#: app/models/answer.rb:-
+msgid "Answer|Content"
+msgstr "内容"
+
+#: app/models/answer.rb:-
+msgid "Answer|Question"
+msgstr "質問"
+
+#: app/models/answer.rb:-
+msgid "Answer|Created at"
+msgstr "作成日時"
+
+#: app/models/answer.rb:-
+msgid "Answer|Updated at"
+msgstr "更新日時"
+
+#: app/models/answer.rb:-
+msgid "Answer|Identity url"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "openid regex"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Regex"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Created at"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Updated at"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "owner"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Question"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Openid regex"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Created at"
+msgstr ""
+
+#: app/models/owner.rb:-
+msgid "Owner|Updated at"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "question"
+msgstr "質問"
+
+#: app/models/question.rb:-
+msgid "Question|Content"
+msgstr "内容"
+
+#: app/models/question.rb:-
+msgid "Question|Created at"
+msgstr "作成日時"
+
+#: app/models/question.rb:-
+msgid "Question|Updated at"
+msgstr "更新日時"
+
+#: app/models/question.rb:-
+msgid "Question|Identity url"
+msgstr ""
+
+#: app/models/question.rb:-
+msgid "Question|Title"
+msgstr "タイトル"
+
+#: app/models/viewer.rb:-
+msgid "viewer"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Question"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Openid regex"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Created at"
+msgstr ""
+
+#: app/models/viewer.rb:-
+msgid "Viewer|Updated at"
+msgstr ""
+
+#: app/views/answers/index.html.erb:1
+msgid "Listing answers"
+msgstr "回答一覧"
+
+#: app/views/answers/index.html.erb:6
+msgid "Id"
+msgstr ""
+
+#: app/views/answers/index.html.erb:10 app/views/questions/index.html.erb:6
+#: app/views/questions/index.html.erb:14
+msgid "IdentityUrl"
+msgstr "OpenID URL"
+
+#: app/views/answers/new.html.erb:1
+msgid "New answer"
+msgstr "回答作成"
+
+#: app/views/answers/show.html.erb:2 app/views/questions/show.html.erb:2
+msgid "Content:"
+msgstr "内容"
+
+#: app/views/answers/show.html.erb:6 app/views/questions/show.html.erb:8
+msgid "IdentityUrl:"
+msgstr "OpenID URL:"
+
+#: app/views/answers/show.html.erb:10 app/views/questions/edit.html.erb:13
+#: app/views/questions/new.html.erb:12 app/views/questions/show.html.erb:31
+msgid "Back"
+msgstr "戻る"
+
+#: app/views/questions/_question.html.erb:4
+#: app/views/questions/edit.html.erb:12
+msgid "Show"
+msgstr "詳細"
+
+#: app/views/questions/_question.html.erb:5
+#: app/views/questions/show.html.erb:30
+msgid "Edit"
+msgstr "編集"
+
+#: app/views/questions/_question.html.erb:6
+msgid "Anser"
+msgstr "回答"
+
+#: app/views/questions/_question.html.erb:7
+msgid "Anser list"
+msgstr "回答一覧"
+
+#: app/views/questions/_question.html.erb:8
+msgid "Destroy"
+msgstr "削除"
+
+#: app/views/questions/_question.html.erb:8
+msgid "Are you sure?"
+msgstr "よろしいですか？"
+
+#: app/views/questions/edit.html.erb:1
+msgid "Editing question"
+msgstr "質問編集"
+
+#: app/views/questions/edit.html.erb:8
+msgid "Update"
+msgstr "更新"
+
+#: app/views/questions/index.html.erb:1
+msgid "Publicated questions"
+msgstr "公開された質問"
+
+#: app/views/questions/index.html.erb:3
+msgid "New questions"
+msgstr "新しい質問"
+
+#: app/views/questions/index.html.erb:5 app/views/questions/index.html.erb:13
+msgid "title"
+msgstr "タイトル"
+
+#: app/views/questions/index.html.erb:11
+msgid "Answered questions"
+msgstr "答えた質問一覧"
+
+#: app/views/questions/index.html.erb:21 app/views/questions/new.html.erb:1
+msgid "New question"
+msgstr "質問作成"
+
+#: app/views/questions/new.html.erb:8
+msgid "Create"
+msgstr "作成"
+
+#: app/views/questions/show.html.erb:14
+msgid "OwnerRegex:"
+msgstr "オーナー"
+
+#: app/views/questions/show.html.erb:22
+msgid "ViewerRegex:"
+msgstr "参加者"
+
+#: app/views/sessions/new.html.erb:4
+msgid "OpenID:"
+msgstr "OpenID:"
+
+#: app/views/sessions/new.html.erb:8
+msgid "Sign in"
+msgstr "ログイン"
+
+#: app/views/sessions/new.html.erb:8
+msgid "Signig in&hellip;"
+msgstr "ログイン中&hellip;"
+
+#~ msgid "Listing questions"
+#~ msgstr "質問一覧"

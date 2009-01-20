@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
   def edit
     @question = Question.find(params[:id])
     unless @question.answers.empty?
-      flash[:error] = "Question was not edit because it has answers."
+      flash[:error] = _("Question was not edit because it has answers.")
       redirect_to(@question)
     end
   end
@@ -47,7 +47,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        flash[:success] = 'Question was successfully created.'
+        flash[:success] = _('Question was successfully created.')
         format.html { redirect_to(@question) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
@@ -64,12 +64,12 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       unless @question.answers.empty?
-        flash[:error] = "Question was not edit because it has answers."
+        flash[:error] = _("Question was not edit because it has answers.")
         format.html { redirect_to(@question) }
       end
 
       if @question.update_attributes(params[:question])
-        flash[:success] = 'Question was successfully updated.'
+        flash[:success] = _('Question was successfully updated.')
         format.html { redirect_to(@question) }
         format.xml  { head :ok }
       else
@@ -86,7 +86,7 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      flash[:success] = "Question was destroied."
+      flash[:success] = _("Question was destroied.")
       format.html { redirect_to(questions_url) }
       format.xml  { head :ok }
     end

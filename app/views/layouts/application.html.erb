@@ -29,8 +29,8 @@
       <div id="main" class="span-24">
         <% %w(error notice success).each do |item| %>
         <% if flash[item.to_sym] != nil %>
-        <div class="<%= item %>">
-          <h3><%=h flash[item.to_sym] %></h3>
+        <div class="<%= item %> corner">
+          <%=h flash[item.to_sym] %>
         </div>
         <% end %>
         <% end %>
@@ -38,6 +38,7 @@
       </div>
     </div>
     <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "jquery.corner" %>
     <%= yield :javascript_include %>
     <script type="text/javascript">
       <%= yield :javascript %>
