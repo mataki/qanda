@@ -14,15 +14,21 @@ class Question < ActiveRecord::Base
   def before_validation
     owner_regexs.clear
     unless owner_regexs_str.blank?
-      owner_regexs.build conversion_regex_str_to_rebex_hash(owner_regexs_str)
+      conversion_regex_str_to_regex_hash(owner_regexs_str).each do |h|
+        regex = OpenidRegex.find_by_regex(h[:regex])
+        owner_regexs << (regex ? regex : OpenidRegex.create(h))
+      end
     else
-      owner_regexs.build conversion_regex_str_to_rebex_hash("*")
+      owner_regexs.build conversion_regex_str_to_regex_hash("*")
     end
     viewer_regexs.clear
     unless viewer_regexs_str.blank?
-      viewer_regexs.build conversion_regex_str_to_rebex_hash(viewer_regexs_str)
+      conversion_regex_str_to_regex_hash(viewer_regexs_str).each do |h|
+        regex = OpenidRegex.find_by_regex(h[:regex])
+        viewer_regexs << (regex ? regex : OpenidRegex.create(h))
+      end
     else
-      viewer_regexs.build conversion_regex_str_to_rebex_hash("*")
+      viewer_regexs.build conversion_regex_str_to_regex_hash("*")
     end
   end
 
@@ -61,7 +67,7 @@ class Question < ActiveRecord::Base
     answers.map{|answer| answer.content.keys }.flatten.uniq.sort
   end
 private
-  def conversion_regex_str_to_rebex_hash(regexs_str)
+  def conversion_regex_str_to_regex_hash(regexs_str)
     regexs = regexs_str ? regexs_str.split(',').map(&:strip).uniq : []
 
     attrs = regexs.map do |regex|

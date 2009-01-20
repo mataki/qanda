@@ -1,16 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Question do
-  before(:each) do
-    @valid_attributes = {
-      :title => "value for title",
-      :content => "value for content",
-      :identity_url => "value for identity_url"
-    }
-  end
-
   it "should create a new instance given valid attributes" do
-    Question.create!(@valid_attributes)
+    Question.create!(question_valid_attributes)
   end
 end
 
@@ -23,6 +15,15 @@ describe Question, "#before_validation" do
       @question.save!
       @question.owner_regexs_str = nil
       @question.owner_regexs_str.should == "*"
+    end
+  end
+  describe "同じ正規表現の場合" do
+    it " 同じOpenidRegexが関連づけられていること" do
+      pending "実際はこうしたいが、トランザクション内で行なわれるため非常に難しい"
+#       @question.save!
+#       @question.owner_regexs_str = nil
+#       @question.viewer_regexs_str = nil
+#       @question.owner_regexs.first.should == @question.viewer_regexs.first
     end
   end
   describe "データが存在している場合 strが渡されていない場合" do
@@ -107,4 +108,12 @@ describe Question, "#grid_header" do
       @question.grid_header.should == valid_keys
     end
   end
+end
+
+def question_valid_attributes
+  @valid_attributes = {
+    :title => "value for title",
+    :content => "value for content",
+    :identity_url => "value for identity_url"
+  }
 end
