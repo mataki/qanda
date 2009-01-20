@@ -2,8 +2,10 @@
 /db/production.sqlite3
 /db/schema.rb
 /db/test.sqlite3
+/db/test.sqlite3-journal
 /log/development.log*
 /log/test.log*
+/log/production.log*
 /config/database.yml
 /tmp/.tasks-cache
 /coveraeg/*

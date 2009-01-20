@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
+    raise ActiveRecord::RecordNotFound unless @question.accessible_by(current_user, params[:controller], params[:action])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
   def new
     @question = Question.new
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @question }
@@ -34,6 +36,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
+    raise ActiveRecord::RecordNotFound unless @question.accessible_by(current_user, params[:controller], params[:action])
+
     unless @question.answers.empty?
       flash[:error] = _("Question was not edit because it has answers.")
       redirect_to(@question)
@@ -61,6 +65,7 @@ class QuestionsController < ApplicationController
   # PUT /questions/1.xml
   def update
     @question = Question.find(params[:id])
+    raise ActiveRecord::RecordNotFound unless @question.accessible_by(current_user, params[:controller], params[:action])
 
     respond_to do |format|
       unless @question.answers.empty?
@@ -83,6 +88,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1.xml
   def destroy
     @question = Question.find(params[:id])
+    raise ActiveRecord::RecordNotFound unless @question.accessible_by(current_user, params[:controller], params[:action])
     @question.destroy
 
     respond_to do |format|

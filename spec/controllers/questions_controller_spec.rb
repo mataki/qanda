@@ -6,7 +6,7 @@ describe QuestionsController do
   end
 
   def mock_question(stubs={})
-    @mock_question ||= mock_model(Question, stubs)
+    @mock_question ||= mock_model(Question, stubs.merge(:accessible_by => true))
   end
 
   describe "responding to GET index" do

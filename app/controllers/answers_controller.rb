@@ -53,5 +53,6 @@ class AnswersController < ApplicationController
 private
   def find_question
     @question = Question.find(params[:question_id])
+    raise ActiveRecord::RecordNotFound unless @question.accessible_by(current_user, params[:controller], params[:action])
   end
 end

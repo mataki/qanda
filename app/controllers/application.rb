@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :login_required
   filter_parameter_logging :password
-
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
   helper_method :logged_in?
 
   def login_required
@@ -27,5 +27,14 @@ class ApplicationController < ActionController::Base
 
   def authorized?
     logged_in?
+  end
+
+  def current_user
+    session[:identity_url]
+  end
+
+  def render_404
+    render :file => "public/404.html"
+    return false
   end
 end

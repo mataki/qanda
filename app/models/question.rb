@@ -19,7 +19,7 @@ class Question < ActiveRecord::Base
         owner_regexs << (regex ? regex : OpenidRegex.create(h))
       end
     else
-      owner_regexs.build conversion_regex_str_to_regex_hash("*")
+      owner_regexs.build conversion_regex_str_to_regex_hash(".*")
     end
     viewer_regexs.clear
     unless viewer_regexs_str.blank?
@@ -28,7 +28,7 @@ class Question < ActiveRecord::Base
         viewer_regexs << (regex ? regex : OpenidRegex.create(h))
       end
     else
-      viewer_regexs.build conversion_regex_str_to_regex_hash("*")
+      viewer_regexs.build conversion_regex_str_to_regex_hash(".*")
     end
   end
 
@@ -53,12 +53,36 @@ class Question < ActiveRecord::Base
   end
 
   def accsessible?(identity_url)
-    viewer? or owner?
+    viewer?(identity_url) or owner?(identity_url) or self.identity_url == identity_url
+  end
+
+  # 回答可能者
+  # 質問 show
+  # 回答 new, create
+  # オーナー
+  # 質問 edit, destroy, update
+
+  def accessible_by(current_user, controller, action)
+    if identity_url == current_user
+      true
+    elsif controller == "questions" and %w(edit update destroy).include?(action) or (controller == "answers" and %w(index).include?(action))
+      owner?(current_user)
+    elsif (controller == "questions" and action == "show") or (controller == "answers" and %w(new create show).include?(action))
+      viewer?(current_user)
+    else
+      false
+    end
   end
 
   def self.find_by_user(identity_url)
-    new_questions = all(:conditions => ["created_at > ?", Time.now - 7.day])
-    answered_questions = all(:conditions => { "answers.identity_url" => identity_url}, :include => :answers)
+    new_questions = self.all(:conditions => ["created_at > ?", Time.now - 7.day]).inject([]) do |result, q|
+      result << q if q.accsessible?(identity_url)
+      result
+    end
+    answered_questions = self.all(:conditions => { "answers.identity_url" => identity_url}, :include => :answers).inject([]) do |result, q|
+      result << q if q.accsessible?(identity_url)
+      result
+    end
 
     return { :new => new_questions, :answered => answered_questions }
   end

@@ -6,7 +6,7 @@ describe AnswersController do
   end
 
   def mock_question(stubs={})
-    @mock_question ||= mock_model(Question, stubs)
+    @mock_question ||= mock_model(Question, stubs.merge(:accessible_by => true))
   end
 
   before do
