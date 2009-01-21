@@ -8,4 +8,4 @@
 /log/production.log*
 /config/database.yml
 /tmp/.tasks-cache
-/coveraeg/*
+/coverage/*
