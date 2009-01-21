@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qanda 0.1.0\n"
-"POT-Creation-Date: 2009-01-20 21:11+0900\n"
-"PO-Revision-Date: 2009-01-20 21:13+0900\n"
+"POT-Creation-Date: 2009-01-21 18:54+0900\n"
+"PO-Revision-Date: 2009-01-21 18:54+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,20 +23,20 @@ msgstr "回答が登録されました"
 msgid "please login."
 msgstr "ログインしてください"
 
-#: app/controllers/questions_controller.rb:38
-#: app/controllers/questions_controller.rb:67
+#: app/controllers/questions_controller.rb:42
+#: app/controllers/questions_controller.rb:72
 msgid "Question was not edit because it has answers."
 msgstr "質問は、既に回答が存在するため編集できません"
 
-#: app/controllers/questions_controller.rb:50
+#: app/controllers/questions_controller.rb:54
 msgid "Question was successfully created."
 msgstr "質問が登録されました"
 
-#: app/controllers/questions_controller.rb:72
+#: app/controllers/questions_controller.rb:77
 msgid "Question was successfully updated."
 msgstr "質問が更新されました"
 
-#: app/controllers/questions_controller.rb:89
+#: app/controllers/questions_controller.rb:95
 msgid "Question was destroied."
 msgstr "質問が削除されました"
 
@@ -148,11 +148,16 @@ msgstr ""
 msgid "Listing answers"
 msgstr "回答一覧"
 
-#: app/views/answers/index.html.erb:6
+#: app/views/answers/index.html.erb:2 app/views/answers/new.html.erb:2
+#: app/views/answers/show.html.erb:1
+msgid "Question's title"
+msgstr "質問のタイトル"
+
+#: app/views/answers/index.html.erb:7
 msgid "Id"
 msgstr ""
 
-#: app/views/answers/index.html.erb:10 app/views/questions/index.html.erb:6
+#: app/views/answers/index.html.erb:11 app/views/questions/index.html.erb:6
 #: app/views/questions/index.html.erb:14
 msgid "IdentityUrl"
 msgstr "OpenID URL"
@@ -161,15 +166,15 @@ msgstr "OpenID URL"
 msgid "New answer"
 msgstr "回答作成"
 
-#: app/views/answers/show.html.erb:2 app/views/questions/show.html.erb:2
+#: app/views/answers/show.html.erb:3 app/views/questions/show.html.erb:2
 msgid "Content:"
 msgstr "内容"
 
-#: app/views/answers/show.html.erb:6 app/views/questions/show.html.erb:8
+#: app/views/answers/show.html.erb:7 app/views/questions/show.html.erb:8
 msgid "IdentityUrl:"
 msgstr "OpenID URL:"
 
-#: app/views/answers/show.html.erb:10 app/views/questions/edit.html.erb:13
+#: app/views/answers/show.html.erb:11 app/views/questions/edit.html.erb:13
 #: app/views/questions/new.html.erb:12 app/views/questions/show.html.erb:31
 msgid "Back"
 msgstr "戻る"
