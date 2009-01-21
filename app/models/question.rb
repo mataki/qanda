@@ -68,7 +68,7 @@ class Question < ActiveRecord::Base
     elsif controller == "questions" and %w(edit update destroy).include?(action) or (controller == "answers" and %w(index).include?(action))
       owner?(current_user)
     elsif (controller == "questions" and action == "show") or (controller == "answers" and %w(new create show).include?(action))
-      viewer?(current_user)
+      accsessible?(current_user)
     else
       false
     end

@@ -11,10 +11,10 @@ describe Question, "#before_validation" do
     @question = Question.new(:identity_url => "http://user.example.com/", :title => "title", :content => "content")
   end
   describe "データが無い場合 strが渡されていない場合" do
-    it "*が追加されていること" do
+    it ".*が追加されていること" do
       @question.save!
       @question.owner_regexs_str = nil
-      @question.owner_regexs_str.should == "*"
+      @question.owner_regexs_str.should == ".*"
     end
   end
   describe "同じ正規表現の場合" do
@@ -34,9 +34,9 @@ describe Question, "#before_validation" do
       @question.owner_regexs_str = nil
       @question.save!
     end
-    it "*のみが設定されていること" do
+    it ".*のみが設定されていること" do
       @question.owner_regexs_str = nil
-      @question.owner_regexs_str.should == "*"
+      @question.owner_regexs_str.should == ".*"
     end
   end
 end
