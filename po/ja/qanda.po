@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qanda 0.1.0\n"
-"POT-Creation-Date: 2009-01-21 18:54+0900\n"
-"PO-Revision-Date: 2009-01-21 18:54+0900\n"
+"POT-Creation-Date: 2009-01-29 19:57+0900\n"
+"PO-Revision-Date: 2009-01-29 19:58+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -149,7 +149,8 @@ msgid "Listing answers"
 msgstr "回答一覧"
 
 #: app/views/answers/index.html.erb:2 app/views/answers/new.html.erb:2
-#: app/views/answers/show.html.erb:1
+#: app/views/answers/show.html.erb:1 app/views/questions/edit.html.erb:2
+#: app/views/questions/show.html.erb:1
 msgid "Question's title"
 msgstr "質問のタイトル"
 
@@ -166,32 +167,40 @@ msgstr "OpenID URL"
 msgid "New answer"
 msgstr "回答作成"
 
-#: app/views/answers/show.html.erb:3 app/views/questions/show.html.erb:2
+#: app/views/answers/show.html.erb:3 app/views/questions/show.html.erb:3
 msgid "Content:"
 msgstr "内容"
 
-#: app/views/answers/show.html.erb:7 app/views/questions/show.html.erb:8
+#: app/views/answers/show.html.erb:7 app/views/questions/show.html.erb:9
 msgid "IdentityUrl:"
 msgstr "OpenID URL:"
 
-#: app/views/answers/show.html.erb:11 app/views/questions/edit.html.erb:13
-#: app/views/questions/new.html.erb:12 app/views/questions/show.html.erb:31
+#: app/views/answers/show.html.erb:11 app/views/questions/edit.html.erb:14
+#: app/views/questions/new.html.erb:12 app/views/questions/show.html.erb:32
 msgid "Back"
 msgstr "戻る"
 
+#: app/views/questions/_form.html.erb:10
+msgid "Owner regexs"
+msgstr "オーナー権限"
+
+#: app/views/questions/_form.html.erb:14
+msgid "Viewer regexs"
+msgstr "参加者権限"
+
 #: app/views/questions/_question.html.erb:4
-#: app/views/questions/edit.html.erb:12
+#: app/views/questions/edit.html.erb:13
 msgid "Show"
 msgstr "詳細"
 
 #: app/views/questions/_question.html.erb:5
-#: app/views/questions/show.html.erb:30
-msgid "Edit"
-msgstr "編集"
-
-#: app/views/questions/_question.html.erb:6
 msgid "Anser"
 msgstr "回答"
+
+#: app/views/questions/_question.html.erb:6
+#: app/views/questions/show.html.erb:31
+msgid "Edit"
+msgstr "編集"
 
 #: app/views/questions/_question.html.erb:7
 msgid "Anser list"
@@ -209,7 +218,7 @@ msgstr "よろしいですか？"
 msgid "Editing question"
 msgstr "質問編集"
 
-#: app/views/questions/edit.html.erb:8
+#: app/views/questions/edit.html.erb:9
 msgid "Update"
 msgstr "更新"
 
@@ -237,11 +246,11 @@ msgstr "質問作成"
 msgid "Create"
 msgstr "作成"
 
-#: app/views/questions/show.html.erb:14
+#: app/views/questions/show.html.erb:15
 msgid "OwnerRegex:"
 msgstr "オーナー"
 
-#: app/views/questions/show.html.erb:22
+#: app/views/questions/show.html.erb:23
 msgid "ViewerRegex:"
 msgstr "参加者"
 
