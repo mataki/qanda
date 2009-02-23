@@ -34,6 +34,9 @@
     <%= select_tag nil, options_for_select([10,20,30,40]), :class => "pagesize" %>
   </form>
 </div>
+<div id="link_navi" style="text-align:right;">
+  <%= link_to "csv", formatted_question_answers_path(:format => "csv") %>
+</div>
 <% content_for :javascript_include do %>
 <%= javascript_include_tag "jquery.tablesorter" %>
 <%= javascript_include_tag "jquery.tablesorter.pager" %>

@@ -16,4 +16,11 @@ class Answer < ActiveRecord::Base
   def grid_data(key)
     content[key] || ""
   end
+
+  def to_csv(header = nil)
+    header ||= question.grid_header
+    header.map do |h|
+      grid_data(h)
+    end << identity_url
+  end
 end

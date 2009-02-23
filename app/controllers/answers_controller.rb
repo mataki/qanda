@@ -1,3 +1,4 @@
+require "csv"
 class AnswersController < ApplicationController
   before_filter :find_question
 
@@ -7,6 +8,17 @@ class AnswersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @answers }
+      format.csv do
+        CSV::Writer.generate(output = "") do |csv|
+          header = @question.grid_header
+
+          csv << (header + ["identity_url"])
+          @answers.each do |answer|
+            csv << answer.to_csv(header)
+          end
+        end
+        send_data(output, :type=>'text/csv', :filename=>'test.csv')
+      end
     end
   end
 
