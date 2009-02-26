@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
             csv << answer.to_csv(header)
           end
         end
-        send_data(output, :type=>'text/csv', :filename=>'test.csv')
+        send_data(output, :type => 'text/csv', :filename => "#{@question.id}-answers.csv")
       end
     end
   end
