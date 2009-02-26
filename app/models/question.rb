@@ -37,11 +37,11 @@ class Question < ActiveRecord::Base
   def owner?(identity_url)
     owner_regexes.any? do |regex|
       Regexp.new(regex.regex).match(identity_url)
-    end
+    end or self.identity_url == identity_url
   end
 
   def accsessible?(identity_url)
-    viewer?(identity_url) or owner?(identity_url) or self.identity_url == identity_url
+    viewer?(identity_url) or owner?(identity_url)
   end
 
   # 回答可能者
