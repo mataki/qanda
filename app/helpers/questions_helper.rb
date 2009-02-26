@@ -22,7 +22,7 @@ module QuestionsHelper
   def navi_table(question, user)
     navi_list(question, user).map do |link|
       "<td>#{link}</td>"
-    end.join('¥n')
+    end.join('')
   end
 
   def navi_text(question, user)
