@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   before_filter :login_required
   filter_parameter_logging :password
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
-  helper_method :logged_in?
+  helper_method :logged_in?, :current_user
 
   def login_required
     unless logged_in?

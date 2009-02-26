@@ -28,5 +28,5 @@
   <% end %>
 </p>
 
-<%= link_to _('Edit'), edit_question_path(@question) %> |
+<%= navi_text(@question, current_user) %> |
 <%= link_to _('Back'), questions_path %>
