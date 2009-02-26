@@ -7,12 +7,15 @@
   <%= form.text_area :content %>
 </p>
 <p>
-  <%= form.label :owner_regexs, _('Owner regexs') %><br />
-  <%= form.text_field :owner_regexs_str %>
+  <%= form.label :owner_regexes, _('Owner regexes') %><br />
+  <%= form.select(:owner_regexes_arr, OpenidRegex.all.map { |r| [r.title , r.id] }, {}, {:multiple => true}) %>
 </p>
 <p>
-  <%= form.label :viewer_regexs, _('Viewer regexs') %><br />
-  <%= form.text_field :viewer_regexs_str %>
+  <%= form.label :viewer_regexes, _('Viewer regexes') %><br />
+  <%= form.select(:viewer_regexes_arr, OpenidRegex.all.map { |r| [r.title, r.id] }, {}, {:multiple => true}) %>
+</p>
+<p>
+  <%= link_to _('New openid_regex'), new_openid_regex_path, :popup => true %>
 </p>
 
 <%= javascript_include_tag "fckeditor/fckeditor" %>

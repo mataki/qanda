@@ -182,11 +182,11 @@ msgid "Back"
 msgstr ""
 
 #: app/views/questions/_form.html.erb:10
-msgid "Owner regexs"
+msgid "Owner regexes"
 msgstr ""
 
 #: app/views/questions/_form.html.erb:14
-msgid "Viewer regexs"
+msgid "Viewer regexes"
 msgstr ""
 
 #: app/views/questions/_question.html.erb:4

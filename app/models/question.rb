@@ -1,53 +1,41 @@
 class Question < ActiveRecord::Base
   has_many :answers
-  has_many :owner_regexs, :through => :owners, :source => :openid_regex
+  has_many :owner_regexes, :through => :owners, :source => :openid_regex
   has_many :owners
-  has_many :viewer_regexs, :through => :viewers, :source => :openid_regex
+  has_many :viewer_regexes, :through => :viewers, :source => :openid_regex
   has_many :viewers
 
   validates_presence_of :content
   validates_presence_of :title
   validates_presence_of :identity_url
 
-  attr_accessor :owner_regexs_str, :viewer_regexs_str
+  attr_accessor :owner_regexes_arr, :viewer_regexes_arr
 
   def before_validation
-    owner_regexs.clear
-    unless owner_regexs_str.blank?
-      conversion_regex_str_to_regex_hash(owner_regexs_str).each do |h|
-        regex = OpenidRegex.find_by_regex(h[:regex])
-        owner_regexs << (regex ? regex : OpenidRegex.create(h))
-      end
-    else
-      owner_regexs.build conversion_regex_str_to_regex_hash(".*")
+    (owner_regexes_arr||[]).each do |i|
+      owner_regexes << OpenidRegex.find(i)
     end
-    viewer_regexs.clear
-    unless viewer_regexs_str.blank?
-      conversion_regex_str_to_regex_hash(viewer_regexs_str).each do |h|
-        regex = OpenidRegex.find_by_regex(h[:regex])
-        viewer_regexs << (regex ? regex : OpenidRegex.create(h))
-      end
-    else
-      viewer_regexs.build conversion_regex_str_to_regex_hash(".*")
+    (viewer_regexes_arr||[]).each do |i|
+      viewer_regexes << OpenidRegex.find(i)
     end
   end
 
-  def owner_regexs_str
-    @owner_regexs_str ||= owner_regexs.map{|regex| regex.regex }.join(',')
+  def owner_regexes_arr
+    @owner_regexes_arr ||= owner_regexes.map{|regex| regex.id.to_s }
   end
 
-  def viewer_regexs_str
-    @viewer_regexs_str ||= viewer_regexs.map{|regex| regex.regex }.join(',')
+  def viewer_regexes_arr
+    @viewer_regexes_arr ||= viewer_regexes.map{|regex| regex.id.to_s }
   end
 
   def viewer?(identity_url)
-    viewer_regexs.any? do |regex|
+    viewer_regexes.any? do |regex|
       Regexp.new(regex.regex).match(identity_url)
     end
   end
 
   def owner?(identity_url)
-    owner_regexs.any? do |regex|
+    owner_regexes.any? do |regex|
       Regexp.new(regex.regex).match(identity_url)
     end
   end
@@ -91,10 +79,10 @@ class Question < ActiveRecord::Base
     answers.map{|answer| answer.content.keys }.flatten.uniq.sort
   end
 private
-  def conversion_regex_str_to_regex_hash(regexs_str)
-    regexs = regexs_str ? regexs_str.split(',').map(&:strip).uniq : []
+  def conversion_regex_str_to_regex_hash(regexes_str)
+    regexes = regexes_str ? regexes_str.split(',').map(&:strip).uniq : []
 
-    attrs = regexs.map do |regex|
+    attrs = regexes.map do |regex|
       { :regex => regex }
     end
     attrs

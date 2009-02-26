@@ -1,0 +1,2 @@
+module OpenidRegexesHelper
+end

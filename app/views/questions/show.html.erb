@@ -13,7 +13,7 @@
 </p>
 <p>
   <b><%= _('OwnerRegex:') %></b>
-  <% @question.owner_regexs.each do |regex| -%>
+  <% @question.owner_regexes.each do |regex| -%>
   <p>
     <%=h regex.regex %>
   </p>
@@ -21,7 +21,7 @@
 </p>
 <p>
   <b><%= _('ViewerRegex:') %></b>
-  <% @question.viewer_regexs.each do |regex| -%>
+  <% @question.viewer_regexes.each do |regex| -%>
   <p>
     <%=h regex.regex %>
   </p>

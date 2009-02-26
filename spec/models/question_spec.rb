@@ -10,33 +10,15 @@ describe Question, "#before_validation" do
   before do
     @question = Question.new(:identity_url => "http://user.example.com/", :title => "title", :content => "content")
   end
-  describe "データが無い場合 strが渡されていない場合" do
-    it ".*が追加されていること" do
-      @question.save!
-      @question.owner_regexs_str = nil
-      @question.owner_regexs_str.should == ".*"
-    end
-  end
-  describe "同じ正規表現の場合" do
-    it " 同じOpenidRegexが関連づけられていること" do
-      pending "実際はこうしたいが、トランザクション内で行なわれるため非常に難しい"
-#       @question.save!
-#       @question.owner_regexs_str = nil
-#       @question.viewer_regexs_str = nil
-#       @question.owner_regexs.first.should == @question.viewer_regexs.first
-    end
-  end
-  describe "データが存在している場合 strが渡されていない場合" do
+  describe "データが存在している場合" do
     before do
-      @question.owner_regexs_str = "http://hoge.openid.host/,http://fuga.openid.host/"
-      @question.save!
-
-      @question.owner_regexs_str = nil
-      @question.save!
+      @question.owner_regexes_arr = ["1", "2"]
+      OpenidRegex.stub!(:find).with("1").and_return(stub_model(OpenidRegex))
+      OpenidRegex.stub!(:find).with("2").and_return(stub_model(OpenidRegex))
     end
     it ".*のみが設定されていること" do
-      @question.owner_regexs_str = nil
-      @question.owner_regexs_str.should == ".*"
+      @question.save
+      @question.owner_regexes.size.should == 2
     end
   end
 end
@@ -44,9 +26,9 @@ end
 describe Question, "#viewer?" do
   describe "viewの正規表現に引っかかる場合" do
     before do
-      @regexs = (1..2).map{|i| stub_model(OpenidRegex, :regex => "http://hoge#{i}.com/.*")}
+      @regexes = (1..2).map{|i| stub_model(OpenidRegex, :regex => "http://hoge#{i}.com/.*")}
       @identity_url = "http://fuga.com/id"
-      @question = stub_model(Question, :viewer_regexs => @regexs)
+      @question = stub_model(Question, :viewer_regexes => @regexes)
     end
     it "falseを返す" do
       @question.viewer?(@identity_url).should be_false
@@ -54,9 +36,9 @@ describe Question, "#viewer?" do
   end
   describe "viewの正規表現に引っかからない場合" do
     before do
-      @regexs = (1..2).map{|i| stub_model(OpenidRegex, :regex => "http://hoge#{i}.com/.*")}
+      @regexes = (1..2).map{|i| stub_model(OpenidRegex, :regex => "http://hoge#{i}.com/.*")}
       @identity_url = "http://hoge1.com/111111"
-      @question = stub_model(Question, :viewer_regexs => @regexs)
+      @question = stub_model(Question, :viewer_regexes => @regexes)
     end
     it "trueを返す" do
       @question.viewer?(@identity_url).should be_true
@@ -66,8 +48,11 @@ end
 
 describe Question, ".find_by_user" do
   before do
+    Question.delete_all
     @user_identity_url = "http://example.com/user/access"
-    @questions = (1..5).map{ |i| Question.create!(:content => "content#{i}", :title => "title#{i}", :identity_url => "http://example.com/user/a_user#{i}") }
+    @openid_regex = OpenidRegex.find_by_regex(".*") || OpenidRegex.create!(:title => "title", :regex => ".*")
+
+    @questions = (1..5).map{ |i| Question.create!(:content => "content#{i}", :title => "title#{i}", :identity_url => "http://example.com/user/a_user#{i}", :owner_regexes_arr => [@openid_regex.id]) }
     @old_question = Question.create!(:content => "content", :title => "title", :identity_url => "http://example.com/user/a_user", :created_at => Time.now - 10.day)
     @ansered_question = @questions.last
     Answer.create!(:identity_url => @user_identity_url, :content => "answer", :question => @ansered_question)

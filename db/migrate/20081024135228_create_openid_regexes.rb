@@ -1,7 +1,7 @@
 class CreateOpenidRegexes < ActiveRecord::Migration
   def self.up
     create_table :openid_regexes do |t|
-      t.string :regex
+      t.string :regex, :title
 
       t.timestamps
     end

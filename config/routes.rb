@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
     question.resources :answers
   end
 
+  map.resources :openid_regexes
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
