@@ -1,13 +1,13 @@
 <p>
-  <b>Regex:</b>
+  <b><%= _('Regex') %>:</b>
   <%=h @openid_regex.regex %>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b><%= _('Title') %>:</b>
   <%=h @openid_regex.title %>
 </p>
 
 
-<%= link_to 'Edit', edit_openid_regex_path(@openid_regex) %> |
-<%= link_to 'Back', openid_regexes_path %>
+<%= link_to _('Edit'), edit_openid_regex_path(@openid_regex) %> |
+<%= link_to _('Back'), openid_regexes_path %>

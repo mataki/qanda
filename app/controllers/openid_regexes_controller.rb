@@ -44,7 +44,7 @@ class OpenidRegexesController < ApplicationController
 
     respond_to do |format|
       if @openid_regex.save
-        flash[:notice] = 'OpenidRegex was successfully created.'
+        flash[:notice] = _('OpenidRegex was successfully created.')
         format.html { redirect_to(@openid_regex) }
         format.xml  { render :xml => @openid_regex, :status => :created, :location => @openid_regex }
       else
@@ -61,7 +61,7 @@ class OpenidRegexesController < ApplicationController
 
     respond_to do |format|
       if @openid_regex.update_attributes(params[:openid_regex])
-        flash[:notice] = 'OpenidRegex was successfully updated.'
+        flash[:notice] = _('OpenidRegex was successfully updated.')
         format.html { redirect_to(@openid_regex) }
         format.xml  { head :ok }
       else

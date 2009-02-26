@@ -1,22 +1,22 @@
-<h1>Listing openid_regexes</h1>
+<h1><%= _('Listing openid_regexes') %></h1>
 
 <table>
   <tr>
-    <th>Regex</th>
-    <th>Title</th>
+    <th><%= _('Regex') %></th>
+    <th><%= _('Title') %></th>
   </tr>
 
 <% for openid_regex in @openid_regexes %>
   <tr>
     <td><%=h openid_regex.regex %></td>
     <td><%=h openid_regex.title %></td>
-    <td><%= link_to 'Show', openid_regex %></td>
-    <td><%= link_to 'Edit', edit_openid_regex_path(openid_regex) %></td>
-    <td><%= link_to 'Destroy', openid_regex, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to _('Show'), openid_regex %></td>
+    <td><%= link_to _('Edit'), edit_openid_regex_path(openid_regex) %></td>
+    <td><%= link_to _('Destroy'), openid_regex, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New openid_regex', new_openid_regex_path %>
+<%= link_to _('New openid_regex'), new_openid_regex_path %>

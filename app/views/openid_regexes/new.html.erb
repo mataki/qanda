@@ -1,4 +1,4 @@
-<h1>New openid_regex</h1>
+<h1><%= _('New openid_regex') %></h1>
 
 <% form_for(@openid_regex) do |f| %>
   <%= f.error_messages %>
@@ -12,8 +12,8 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit _("Create") %>
   </p>
 <% end %>
 
-<%= link_to 'Back', openid_regexes_path %>
+<%= link_to _('Back'), openid_regexes_path %>

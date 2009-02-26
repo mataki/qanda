@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qanda 0.1.0\n"
-"POT-Creation-Date: 2009-02-26 21:46+0900\n"
+"POT-Creation-Date: 2009-02-26 21:58+0900\n"
 "PO-Revision-Date: 2009-01-20 20:38+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,14 @@ msgstr ""
 
 #: app/controllers/application.rb:18
 msgid "please login."
+msgstr ""
+
+#: app/controllers/openid_regexes_controller.rb:47
+msgid "OpenidRegex was successfully created."
+msgstr ""
+
+#: app/controllers/openid_regexes_controller.rb:64
+msgid "OpenidRegex was successfully updated."
 msgstr ""
 
 #: app/controllers/questions_controller.rb:42
@@ -180,9 +188,50 @@ msgstr ""
 msgid "IdentityUrl:"
 msgstr ""
 
-#: app/views/answers/show.html.erb:11 app/views/questions/edit.html.erb:14
-#: app/views/questions/new.html.erb:12 app/views/questions/show.html.erb:32
+#: app/views/answers/show.html.erb:11 app/views/openid_regexes/new.html.erb:19
+#: app/views/openid_regexes/show.html.erb:13
+#: app/views/questions/edit.html.erb:14 app/views/questions/new.html.erb:12
+#: app/views/questions/show.html.erb:32
 msgid "Back"
+msgstr ""
+
+#: app/views/openid_regexes/edit.html.erb:1
+msgid "Editing openid_regex"
+msgstr ""
+
+#: app/views/openid_regexes/edit.html.erb:15
+#: app/views/questions/edit.html.erb:9
+msgid "Update"
+msgstr ""
+
+#: app/views/openid_regexes/index.html.erb:1
+msgid "Listing openid_regexes"
+msgstr ""
+
+#: app/views/openid_regexes/index.html.erb:5
+#: app/views/openid_regexes/show.html.erb:2
+msgid "Regex"
+msgstr ""
+
+#: app/views/openid_regexes/index.html.erb:6
+#: app/views/openid_regexes/show.html.erb:7
+msgid "Title"
+msgstr ""
+
+#: app/views/openid_regexes/index.html.erb:22
+#: app/views/openid_regexes/new.html.erb:1
+#: app/views/questions/_form.html.erb:18
+msgid "New openid_regex"
+msgstr ""
+
+#: app/views/openid_regexes/new.html.erb:15 app/views/questions/new.html.erb:8
+msgid "Create"
+msgstr ""
+
+#: app/views/openid_regexes/show.html.erb:12
+#: app/views/questions/_question.html.erb:6
+#: app/views/questions/show.html.erb:31
+msgid "Edit"
 msgstr ""
 
 #: app/views/questions/_form.html.erb:10
@@ -193,10 +242,6 @@ msgstr ""
 msgid "Viewer regexes"
 msgstr ""
 
-#: app/views/questions/_form.html.erb:18
-msgid "New openid_regex"
-msgstr ""
-
 #: app/views/questions/_question.html.erb:4
 #: app/views/questions/edit.html.erb:13
 msgid "Show"
@@ -204,11 +249,6 @@ msgstr ""
 
 #: app/views/questions/_question.html.erb:5
 msgid "Anser"
-msgstr ""
-
-#: app/views/questions/_question.html.erb:6
-#: app/views/questions/show.html.erb:31
-msgid "Edit"
 msgstr ""
 
 #: app/views/questions/_question.html.erb:7
@@ -225,10 +265,6 @@ msgstr ""
 
 #: app/views/questions/edit.html.erb:1
 msgid "Editing question"
-msgstr ""
-
-#: app/views/questions/edit.html.erb:9
-msgid "Update"
 msgstr ""
 
 #: app/views/questions/index.html.erb:1
@@ -249,10 +285,6 @@ msgstr ""
 
 #: app/views/questions/index.html.erb:21 app/views/questions/new.html.erb:1
 msgid "New question"
-msgstr ""
-
-#: app/views/questions/new.html.erb:8
-msgid "Create"
 msgstr ""
 
 #: app/views/questions/show.html.erb:15
