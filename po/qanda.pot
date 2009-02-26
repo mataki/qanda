@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qanda 0.1.0\n"
-"POT-Creation-Date: 2009-01-29 19:57+0900\n"
+"POT-Creation-Date: 2009-02-26 21:46+0900\n"
 "PO-Revision-Date: 2009-01-20 20:38+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: app/controllers/answers_controller.rb:43
+#: app/controllers/answers_controller.rb:55
 msgid "Answer was successfully created."
 msgstr ""
 
@@ -71,6 +71,10 @@ msgstr ""
 
 #: app/models/openid_regex.rb:-
 msgid "OpenidRegex|Regex"
+msgstr ""
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Title"
 msgstr ""
 
 #: app/models/openid_regex.rb:-
@@ -187,6 +191,10 @@ msgstr ""
 
 #: app/views/questions/_form.html.erb:14
 msgid "Viewer regexes"
+msgstr ""
+
+#: app/views/questions/_form.html.erb:18
+msgid "New openid_regex"
 msgstr ""
 
 #: app/views/questions/_question.html.erb:4

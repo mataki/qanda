@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qanda 0.1.0\n"
-"POT-Creation-Date: 2009-01-29 19:57+0900\n"
-"PO-Revision-Date: 2009-01-29 19:58+0900\n"
+"POT-Creation-Date: 2009-02-26 21:46+0900\n"
+"PO-Revision-Date: 2009-02-26 21:50+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: app/controllers/answers_controller.rb:43
+#: app/controllers/answers_controller.rb:55
 msgid "Answer was successfully created."
 msgstr "回答が登録されました"
 
@@ -62,31 +62,35 @@ msgstr "更新日時"
 
 #: app/models/answer.rb:-
 msgid "Answer|Identity url"
-msgstr ""
+msgstr "回答者"
 
 #: app/models/openid_regex.rb:-
 msgid "openid regex"
-msgstr ""
+msgstr "OpenID正規表現"
 
 #: app/models/openid_regex.rb:-
 msgid "OpenidRegex|Regex"
-msgstr ""
+msgstr "条件"
+
+#: app/models/openid_regex.rb:-
+msgid "OpenidRegex|Title"
+msgstr "タイトル"
 
 #: app/models/openid_regex.rb:-
 msgid "OpenidRegex|Created at"
-msgstr ""
+msgstr "作成日"
 
 #: app/models/openid_regex.rb:-
 msgid "OpenidRegex|Updated at"
-msgstr ""
+msgstr "更新日"
 
 #: app/models/owner.rb:-
 msgid "owner"
-msgstr ""
+msgstr "オーナー"
 
 #: app/models/owner.rb:-
 msgid "Owner|Question"
-msgstr ""
+msgstr "質問"
 
 #: app/models/owner.rb:-
 msgid "Owner|Openid regex"
@@ -118,7 +122,7 @@ msgstr "更新日時"
 
 #: app/models/question.rb:-
 msgid "Question|Identity url"
-msgstr ""
+msgstr "作成者id"
 
 #: app/models/question.rb:-
 msgid "Question|Title"
@@ -126,11 +130,11 @@ msgstr "タイトル"
 
 #: app/models/viewer.rb:-
 msgid "viewer"
-msgstr ""
+msgstr "閲覧可能者"
 
 #: app/models/viewer.rb:-
 msgid "Viewer|Question"
-msgstr ""
+msgstr "質問"
 
 #: app/models/viewer.rb:-
 msgid "Viewer|Openid regex"
@@ -181,12 +185,16 @@ msgid "Back"
 msgstr "戻る"
 
 #: app/views/questions/_form.html.erb:10
-msgid "Owner regexs"
+msgid "Owner regexes"
 msgstr "オーナー権限"
 
 #: app/views/questions/_form.html.erb:14
-msgid "Viewer regexs"
+msgid "Viewer regexes"
 msgstr "参加者権限"
+
+#: app/views/questions/_form.html.erb:18
+msgid "New openid_regex"
+msgstr "条件の新規作成"
 
 #: app/views/questions/_question.html.erb:4
 #: app/views/questions/edit.html.erb:13
@@ -265,6 +273,3 @@ msgstr "ログイン"
 #: app/views/sessions/new.html.erb:8
 msgid "Signig in&hellip;"
 msgstr "ログイン中&hellip;"
-
-#~ msgid "Listing questions"
-#~ msgstr "質問一覧"
