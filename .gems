@@ -1,2 +1,2 @@
-ruby-openid
+ruby-openid --version "2.1.2"
 gettext --version "1.93.0"
