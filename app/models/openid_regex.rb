@@ -6,7 +6,7 @@ class OpenidRegex < ActiveRecord::Base
     begin
       Regexp.new(regex) unless regex.blank?
     rescue RegexpError => e
-      self.add(:regex, "invalid regular expression")
+      self.errors.add(:regex, "invalid regular expression")
     end
   end
 end
